@@ -1,8 +1,8 @@
 " Vim sanity for stupid editors
-" Last Change:	2009/03/19
-" Maintainer:	Philip Champon <pchampon@klma.com>
-" License:	It's theirs, I did it here, they've got that tricky contract
-"
+" Last Change:	2010/10/10
+" Maintainer:	Philip Champon <pchampon@gmail.com>
+" thanks so:
+" http://stackoverflow.com/questions/1853025/make-and-ignore-lines-containing-only-whitespace
 if exists("loaded_para")
 	finish
 endif

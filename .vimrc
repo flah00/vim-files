@@ -25,7 +25,7 @@ set showmatch		" Show matching brackets.
 set smartcase		" Do smart case matching.
 set nostartofline   " don't jump to first character when paging
 set tabstop=2
-set tags+=tags,tmp/tags
+set tags+=tags;/,tmp/tags
 "set viminfo='20,<50,s10,h
 set visualbell t_vb=	" turn off error beep/flash
 "set novisualbell	" turn off visual bell
