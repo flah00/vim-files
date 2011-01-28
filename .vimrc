@@ -3,6 +3,7 @@ set nocompatible	" use vim defaults
 
 " 256 colors!
 set t_Co=256
+set background=dark
 set autoindent
 set autowrite		" Automatically save before commands like :next and :make.
 set backspace=eol,start,indent
@@ -34,11 +35,9 @@ set visualbell t_vb=	" turn off error beep/flash
 set whichwrap=b,s,h,l,<,>,[,]   " move freely between files
 
 syntax on
-let background='dark'
-"let psc_style='warm'
-colorscheme jellybeans
-highlight Normal ctermbg=NONE ctermfg=LightGrey
-highlight Comment ctermbg=NONE ctermfg=DarkGrey
+let psc_style='defdark'
+colorscheme ps_color
+hi Comment ctermfg=237
 "colorscheme jellybeans
 
 noremap <unique> <Leader>h :TOhtml<CR>:1<CR>/body<CR>:1,-1d<CR>nc$pre style="font-family: monospace; color: #ffffff; background-color: #000000; overflow: auto; height: 20em;"><CR><code><ESC>/\/body:,$d<CR>:w! /tmp/buffer.txt<CR>
