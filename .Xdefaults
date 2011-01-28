@@ -1,0 +1,23 @@
+XTerm*color0:           #000000
+XTerm*color1:           #800000
+XTerm*color2:           #008000
+XTerm*color3:           #d0d090
+XTerm*color4:           #000080
+XTerm*color5:           #800080
+XTerm*color6:           #a6caf0
+XTerm*color7:           #d0d0d0
+XTerm*color8:           #b0b0b0
+XTerm*color9:           #f08060
+XTerm*color10:          #60f080
+XTerm*color11:          #e0c060
+XTerm*color12:          #80c0e0
+XTerm*color13:          #f0c0f0
+XTerm*color14:          #c0d8f8
+XTerm*color15:          #e0e0e0
+XTerm*cursorColor:      #00f000
+
+! The following are recommended but optional
+XTerm*reverseVideo:     False
+XTerm*background:       #202020
+XTerm*foreground:       #d0d0d0
+XTerm*boldMode:         False
