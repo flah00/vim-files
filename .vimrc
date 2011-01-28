@@ -37,7 +37,7 @@ set whichwrap=b,s,h,l,<,>,[,]   " move freely between files
 syntax on
 let psc_style='defdark'
 colorscheme ps_color
-hi Comment ctermfg=237
+hi Comment ctermfg=240
 "colorscheme jellybeans
 
 noremap <unique> <Leader>h :TOhtml<CR>:1<CR>/body<CR>:1,-1d<CR>nc$pre style="font-family: monospace; color: #ffffff; background-color: #000000; overflow: auto; height: 20em;"><CR><code><ESC>/\/body:,$d<CR>:w! /tmp/buffer.txt<CR>
