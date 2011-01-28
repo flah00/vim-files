@@ -1,8 +1,6 @@
 " my vim file
 set nocompatible	" use vim defaults
 
-" 256 colors!
-set t_Co=256
 set background=dark
 set autoindent
 set autowrite		" Automatically save before commands like :next and :make.
@@ -35,6 +33,9 @@ set visualbell t_vb=	" turn off error beep/flash
 set whichwrap=b,s,h,l,<,>,[,]   " move freely between files
 
 syntax on
+if &term =~ "screen-" || &term =~ "xterm-"
+	set t_Co=256
+endif
 let psc_style='defdark'
 colorscheme ps_color
 hi Comment ctermfg=240
