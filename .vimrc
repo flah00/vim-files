@@ -34,7 +34,12 @@ set visualbell t_vb=	" turn off error beep/flash
 set whichwrap=b,s,h,l,<,>,[,]   " move freely between files
 
 syntax on
-colorscheme jellyx
+let background='dark'
+"let psc_style='warm'
+colorscheme jellybeans
+highlight Normal ctermbg=NONE ctermfg=LightGrey
+highlight Comment ctermbg=NONE ctermfg=DarkGrey
+"colorscheme jellybeans
 
 noremap <unique> <Leader>h :TOhtml<CR>:1<CR>/body<CR>:1,-1d<CR>nc$pre style="font-family: monospace; color: #ffffff; background-color: #000000; overflow: auto; height: 20em;"><CR><code><ESC>/\/body:,$d<CR>:w! /tmp/buffer.txt<CR>
 noremap <unique> <Leader>l :TlistToggle<CR>
