@@ -3,10 +3,10 @@
 " Maintainer:	Philip Champon <pchampon@gmail.com>
 " thanks so:
 " http://stackoverflow.com/questions/1853025/make-and-ignore-lines-containing-only-whitespace
-if exists("loaded_para")
+if exists("g:loaded_para")
 	finish
 endif
-let loaded_para=1
+let g:loaded_para=1
 
 let s:save_cpo = &cpo
 set cpo&vim
