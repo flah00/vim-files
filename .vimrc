@@ -15,9 +15,9 @@ set ignorecase	" Do case insensitive matching.
 set incsearch		" Incremental search.
 set modeline		" last lines in document sets vim mode
 set modelines=2	 " number lines checked for modelines
-"set mouse=a
+set mouse=a
 "set nowrap
-"set number			" Show linenums.
+set number			" Show linenums.
 set ruler
 set shiftwidth=2
 set shortmess=atI   " Abbreviate messages
@@ -36,10 +36,6 @@ syntax on
 if &term =~ "screen-" || &term =~ "xterm-"
 	set t_Co=256
 endif
-let psc_style='defdark'
-colorscheme ps_color
-hi Comment ctermfg=240
-"colorscheme jellybeans
 
 noremap <unique> <Leader>h :TOhtml<CR>:1<CR>/body<CR>:1,-1d<CR>nc$pre style="font-family: monospace; color: #ffffff; background-color: #000000; overflow: auto; height: 20em;"><CR><code><ESC>/\/body:,$d<CR>:w! /tmp/buffer.txt<CR>
 noremap <unique> <Leader>l :TlistToggle<CR>
@@ -93,3 +89,10 @@ let g:html_number_lines = 0
 " pathogen settings
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+
+set statusline=%<%f%{fugitive#statusline()}
+colorscheme solarized
+"let psc_style='defdark'
+"colorscheme ps_color
+"hi Comment ctermfg=240
+"colorscheme jellybeans
