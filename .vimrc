@@ -90,9 +90,15 @@ let g:html_number_lines = 0
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
-set statusline=%<%f%{fugitive#statusline()}
 colorscheme solarized
 "let psc_style='defdark'
 "colorscheme ps_color
 "hi Comment ctermfg=240
 "colorscheme jellybeans
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y
+set statusline+=\  
+set statusline+=%{fugitive#statusline()}
+set statusline+=\  
+set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}\  " highlight
+set statusline+=%b,0x%-8B\                   " current char
+set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
