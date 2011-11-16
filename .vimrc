@@ -65,6 +65,8 @@ if has("autocmd")
 	au FileType help nnoremap <buffer> <bs> <c-T>|   " Backspace to go back
 
 	au FileType smarty,html,css map <buffer> <F3> :!tidy "%"<cr>
+	au FileType ruby,ruby-sinatra,haml,sass,html,css set expandtab
+	au FileType ruby-sinatra let &l:commentrsting('# %s')
 endif
 
 if $VIM_CRONTAB == 'true'
