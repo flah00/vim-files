@@ -66,6 +66,10 @@ if has("autocmd")
 
 	au FileType smarty,html,css map <buffer> <F3> :!tidy "%"<cr>
 	au FileType ruby,ruby-sinatra,haml,sass,html,css set expandtab
+	au FileType ruby,ruby-sinatra,haml,sass,html,css map <leader>p :!powder restart<cr>
+	au FileType ruby,ruby-sinatra map <leader>r :!ruby -c %<cr>
+	au FileType haml map <leader>r :!haml -c %<cr>
+	au FileType sass map <leader>r :!sass -c %<cr>
 	au FileType ruby-sinatra let &l:commentrsting('# %s')
 endif
 
