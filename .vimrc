@@ -50,6 +50,7 @@ noremap <C-S-p> :tabnext<cr>
 noremap <C-S-o> :tabprev<cr>
 noremap <C-S-n> :tabnew<cr>
 noremap <unique> <Leader>= :%s/:\([^[:space:]=]\+\)\s*=>\s*/\1: /g<CR>
+noremap <unique> <Leader>a :!ack 
 
 if has("autocmd")
 	"filetype plugin on
