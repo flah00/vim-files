@@ -1,10 +1,12 @@
 set  nocompatible               " use vim defaults
-set  background=dark
+
+"set novisualbell               " turn off visual bell
+"set nowrap
+"set viminfo='20,<50,s10,h
 set  autoindent
 set  autowrite                  " Automatically save before commands like :next and :make.
+set  background=dark
 set  backspace=eol,start,indent
-set  nobackup                   " do not keep a backup file
-set  nocp
 set  encoding=utf-8
 set  hidden
 set  history=100
@@ -14,7 +16,9 @@ set  incsearch                  " Incremental search.
 set  modeline                   " last lines in document sets vim mode
 set  modelines=2                " number lines checked for modelines
 set  mouse=a
-"set nowrap
+set  nobackup                   " do not keep a backup file
+set  nocp
+set  nostartofline              " don't jump to first character when paging
 set  number                     " Show linenums.
 set  ruler
 set  shiftwidth=2
@@ -22,12 +26,9 @@ set  shortmess=atI              " Abbreviate messages
 set  showcmd                    " Show (partial) command in status line.
 set  showmatch                  " Show matching brackets.
 set  smartcase                  " Do smart case matching.
-set  nostartofline              " don't jump to first character when paging
 set  tabstop=2
 set  tags+=tags;/,tmp/tags
-"set viminfo='20,<50,s10,h
 set  visualbell t_vb=           " turn off error beep/flash
-"set novisualbell               " turn off visual bell
 set  whichwrap=b,s,h,l,<,>,[,]  " move freely between files
 set clipboard=unnamed
 
@@ -64,14 +65,12 @@ if has("autocmd")
   au FileType help nnoremap <buffer> <cr> <c-]>|   " Enter selects subject
   au FileType help nnoremap <buffer> <bs> <c-T>|   " Backspace to go back
 
-  au FileType smarty,html,css map <buffer> <F3> :!tidy "%"<cr>
-  au FileType ruby,ruby-sinatra,haml,sass,html,css set expandtab
-  au FileType ruby,ruby-sinatra,haml,sass,html,css map <leader>p :!powder restart<cr>
-  au FileType ruby,ruby-sinatra,haml,sass,html,css map <leader>g :!powder applog<cr>
-  au FileType ruby,ruby-sinatra,haml,sass,html,css map <leader>o :!powder open<cr>
-  au FileType ruby,ruby-sinatra map <leader>r :!ruby -c %<cr>
-  au FileType haml map <leader>r :!haml -c %<cr>
-  au FileType sass map <leader>r :!sass -c %<cr>
+  au BufWinEnter,BufNewFile,BufRead,FileType smarty,html,css map <buffer> <F3> :!tidy "%"<cr>
+  au BufWinEnter,BufNewFile,BufRead,FileType ruby,ruby-sinatra,haml,sass,html,css set expandtab
+  au BufWinEnter,BufNewFile,BufRead,FileType ruby,ruby-sinatra,haml,sass,html,css noremap <leader>p :!powder restart<cr>
+  au BufWinEnter,BufNewFile,BufRead,FileType ruby,ruby-sinatra noremap <buffer> <leader>r :!ruby -c %<cr>
+  au BufWinEnter,BufNewFile,BufRead,FileType haml noremap <buffer> <leader>r :!haml -c %<cr>
+  au BufWinEnter,BufNewFile,BufRead,FileType sass noremap <buffer> <leader>r :!sass -c %<cr>
   au FileType ruby-sinatra let &l:commentrsting('# %s')
 endif
 
