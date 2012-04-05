@@ -1,4 +1,4 @@
 #!/bin/bash
-find * -name .git\* -prune -o -print| cpio -pdm ~/.vim
+find * \( -name .git\* -o -name vim.rb \) -prune -o -print| cpio -pdm ~/.vim
 cp .vimrc ~
 cp -i .Xdefaults .Xresources ~
