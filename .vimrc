@@ -66,11 +66,14 @@ if has("autocmd")
   au FileType help nnoremap <buffer> <bs> <c-T>|   " Backspace to go back
 
   au BufWinEnter,BufNewFile,BufRead,FileType smarty,html,css map <buffer> <F3> :!tidy "%"<cr>
-  au BufWinEnter,BufNewFile,BufRead,FileType ruby,ruby-sinatra,haml,sass,html,css set expandtab
-  au BufWinEnter,BufNewFile,BufRead,FileType ruby,ruby-sinatra,haml,sass,html,css noremap <leader>p :!powder restart<cr>
+  au BufWinEnter,BufNewFile,BufRead,FileType ruby,ruby-sinatra,haml,sass,html,css,coffee set expandtab
+  au BufWinEnter,BufNewFile,BufRead,FileType ruby,ruby-sinatra,haml,sass,html,css,coffee noremap <leader>o :!powder open<cr>
+  au BufWinEnter,BufNewFile,BufRead,FileType ruby,ruby-sinatra,haml,sass,html,css,coffee noremap <leader>p :!powder restart<cr>
   au BufWinEnter,BufNewFile,BufRead,FileType ruby,ruby-sinatra noremap <buffer> <leader>r :!ruby -c %<cr>
   au BufWinEnter,BufNewFile,BufRead,FileType haml noremap <buffer> <leader>r :!haml -c %<cr>
   au BufWinEnter,BufNewFile,BufRead,FileType sass noremap <buffer> <leader>r :!sass -c %<cr>
+  au BufWinEnter,BufNewFile,BufRead,FileType coffee noremap <buffer> <leader>r :CoffeeMake!<cr>
+  au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
   au FileType ruby-sinatra let &l:commentrsting('# %s')
 endif
 
