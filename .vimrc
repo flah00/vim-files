@@ -73,7 +73,7 @@ if has("autocmd")
   au BufWinEnter,BufNewFile,BufRead,FileType haml noremap <buffer> <leader>r :!haml -c %<cr>
   au BufWinEnter,BufNewFile,BufRead,FileType sass noremap <buffer> <leader>r :!sass -c %<cr>
   au BufWinEnter,BufNewFile,BufRead,FileType coffee noremap <buffer> <leader>r :CoffeeMake!<cr>
-  au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+  au BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
   au FileType ruby-sinatra let &l:commentrsting('# %s')
 endif
 
@@ -111,3 +111,5 @@ set statusline+=%{fugitive#statusline()}\
 set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}  " highlight
 set statusline+=%b,0x%-8B                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
+
+let coffee_make_options = '-b -o tmp'
