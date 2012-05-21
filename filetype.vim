@@ -1,4 +1,5 @@
 augroup filetypedetect
+	au BufNewFile,BufRead *.hamlc set filetype=haml
 	au BufNewFile,BufRead *.eco set filetype=eco
 	au BufNewFile,BufRead *.coffee set filetype=coffee
 	au BufNewFile,BufRead .tmux.conf*,tmux.conf* set filetype=tmux
