@@ -1,6 +1,5 @@
-Rnavcommand api app/api/api -glob=**/*
-Rnavcommand api_v1 app/api/api_v1 -glob=* -default=model()
-Rnavcommand entity_v1 app/api/api_v1/entities -glob=**/* -default=model()
+Rnavcommand api app/api -glob=**/*
+Rnavcommand entity app/api/api_v1/entities -glob=**/*
 Rnavcommand observer app/observers -glob=**/*
 Rnavcommand job app/jobs -glob=**/*
 Rnavcommand mixin app/mixins -glob=**/*
