@@ -1,3 +1,4 @@
+Rnavcommand jst app/assets/javascripts/templates -glob=**/*
 Rnavcommand api app/api -glob=**/*
 Rnavcommand entity app/api/api_v1/entities -glob=**/*
 Rnavcommand observer app/observers -glob=**/*
