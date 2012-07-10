@@ -31,9 +31,6 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/vim-ruby-debugger"]
-	path = bundle/vim-ruby-debugger
-	url = https://github.com/astashov/vim-ruby-debugger.git
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
