@@ -30,7 +30,8 @@ set  tabstop=2
 set  tags+=tags;/,tmp/tags
 set  visualbell t_vb=           " turn off error beep/flash
 set  whichwrap=b,s,h,l,<,>,[,]  " move freely between files
-set clipboard=unnamed
+set  wrapmargin=80
+set  clipboard=unnamed
 
 syntax on
 if &term =~ "screen-" || &term =~ "xterm-"
@@ -38,6 +39,9 @@ if &term =~ "screen-" || &term =~ "xterm-"
 endif
 
 noremap <unique> <Leader>h :TOhtml<CR>:1<CR>/body<CR>:1,-1d<CR>nc$pre style="font-family: monospace; color: #ffffff; background-color: #000000; overflow: auto; height: 20em;"><CR><code><ESC>/\/body:,$d<CR>:w! /tmp/buffer.txt<CR>
+noremap <unique> <Leader>s :!sort<CR>
+noremap <unique> <Leader>g :!align.pl -ss<CR>dd
+noremap <unique> <Leader>G :s/ *$//<CR>
 noremap <unique> <Leader>l :TlistToggle<CR>
 noremap <unique> <Leader>; :NERDTreeToggle<CR>
 inoremap <C-m> <C-x><C-o>
