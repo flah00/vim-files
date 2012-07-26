@@ -1,5 +1,5 @@
 Rnavcommand jst app/assets/javascripts/templates -glob=**/*
-Rnavcommand api app/api/api_v1 -glob=* -default=model()
+Rnavcommand api app/api -glob=* -default=model()
 Rnavcommand entity app/api/api_v1/entities -glob=**/* -default=model()
 Rnavcommand observer app/observers -glob=**/*
 Rnavcommand job app/jobs -glob=**/*
