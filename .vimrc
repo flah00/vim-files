@@ -28,9 +28,9 @@ set  showmatch                  " Show matching brackets.
 set  smartcase                  " Do smart case matching.
 set  tabstop=2
 set  tags+=tags;/,tmp/tags
+set  textwidth=80
 set  visualbell t_vb=           " turn off error beep/flash
 set  whichwrap=b,s,h,l,<,>,[,]  " move freely between files
-set  wrapmargin=80
 set  clipboard=unnamed
 
 syntax on
