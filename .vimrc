@@ -38,7 +38,6 @@ if &term =~ "screen-" || &term =~ "xterm-"
   set t_Co=256
 endif
 
-noremap <Leader>h :TOhtml<CR>:1<CR>/body<CR>:1,-1d<CR>nc$pre style="font-family: monospace; color: #ffffff; background-color: #000000; overflow: auto; height: 20em;"><CR><code><ESC>/\/body:,$d<CR>:w! /tmp/buffer.txt<CR>
 noremap <Leader>s :!sort<CR>
 noremap <Leader>g :!align.pl -ss<CR>dd
 noremap <Leader>G :s/ *$//<CR>
@@ -50,9 +49,10 @@ inoremap <C-m> <C-x><C-o>
 "inoremap <expr> k   pumvisible()?"\<C-P>":"k"
 "noremap <C-w>l <C-w>2<C-w>
 "noremap <C-w>b <C-w>1<C-w>
-noremap <C-S-p> :tabnext<cr>
-noremap <C-S-o> :tabprev<cr>
-noremap <C-S-n> :tabnew<cr>
+noremap <C-p> :tabnext<cr>
+noremap <C-o> :tabprev<cr>
+noremap <C-n> :tabnew<cr>
+noremap <C-q> :tabclose<cr>
 noremap <Leader>= :%s/:\([^[:space:]=]\+\)\s*=>\s*/\1: /g<CR>
 noremap <Leader>a :!ack 
 noremap <Leader>g :grep -R 
