@@ -55,6 +55,8 @@ noremap <C-S-o> :tabprev<cr>
 noremap <C-S-n> :tabnew<cr>
 noremap <Leader>= :%s/:\([^[:space:]=]\+\)\s*=>\s*/\1: /g<CR>
 noremap <Leader>a :!ack 
+noremap <Leader>g :grep -R 
+noremap <Leader>G :grep -R app<Left><Left><Left><Left>
 
 if has("autocmd")
   "filetype plugin on
