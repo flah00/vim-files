@@ -38,12 +38,12 @@ if &term =~ "screen-" || &term =~ "xterm-"
   set t_Co=256
 endif
 
-noremap <unique> <Leader>h :TOhtml<CR>:1<CR>/body<CR>:1,-1d<CR>nc$pre style="font-family: monospace; color: #ffffff; background-color: #000000; overflow: auto; height: 20em;"><CR><code><ESC>/\/body:,$d<CR>:w! /tmp/buffer.txt<CR>
-noremap <unique> <Leader>s :!sort<CR>
-noremap <unique> <Leader>g :!align.pl -ss<CR>dd
-noremap <unique> <Leader>G :s/ *$//<CR>
-noremap <unique> <Leader>l :TlistToggle<CR>
-noremap <unique> <Leader>; :NERDTreeToggle<CR>
+noremap <Leader>h :TOhtml<CR>:1<CR>/body<CR>:1,-1d<CR>nc$pre style="font-family: monospace; color: #ffffff; background-color: #000000; overflow: auto; height: 20em;"><CR><code><ESC>/\/body:,$d<CR>:w! /tmp/buffer.txt<CR>
+noremap <Leader>s :!sort<CR>
+noremap <Leader>g :!align.pl -ss<CR>dd
+noremap <Leader>G :s/ *$//<CR>
+noremap <Leader>l :TlistToggle<CR>
+noremap <Leader>; :NERDTreeToggle<CR>
 inoremap <C-m> <C-x><C-o>
 "inoremap <expr> <cr> pumvisible()? "\<c-y>":"\<c-g>u\<cr>"
 "inoremap <expr> j   pumvisible()?"\<C-N>":"j"
@@ -53,8 +53,8 @@ inoremap <C-m> <C-x><C-o>
 noremap <C-S-p> :tabnext<cr>
 noremap <C-S-o> :tabprev<cr>
 noremap <C-S-n> :tabnew<cr>
-noremap <unique> <Leader>= :%s/:\([^[:space:]=]\+\)\s*=>\s*/\1: /g<CR>
-noremap <unique> <Leader>a :!ack 
+noremap <Leader>= :%s/:\([^[:space:]=]\+\)\s*=>\s*/\1: /g<CR>
+noremap <Leader>a :!ack 
 
 if has("autocmd")
   "filetype plugin on
@@ -69,14 +69,14 @@ if has("autocmd")
   au FileType help nnoremap <buffer> <cr> <c-]>|   " Enter selects subject
   au FileType help nnoremap <buffer> <bs> <c-T>|   " Backspace to go back
 
-  au BufWinEnter,BufNewFile,BufRead,FileType smarty,html,css map <buffer> <F3> :!tidy "%"<cr>
-  au BufWinEnter,BufNewFile,BufRead,FileType ruby,ruby-sinatra,haml,sass,html,css,coffee set expandtab
-  au BufWinEnter,BufNewFile,BufRead,FileType ruby,ruby-sinatra,haml,sass,html,css,coffee noremap <leader>o :!powder open<cr>
-  au BufWinEnter,BufNewFile,BufRead,FileType ruby,ruby-sinatra,haml,sass,html,css,coffee noremap <leader>p :!powder restart<cr>
-  au BufWinEnter,BufNewFile,BufRead,FileType ruby,ruby-sinatra noremap <buffer> <leader>r :!ruby -c %<cr>
-  au BufWinEnter,BufNewFile,BufRead,FileType haml noremap <buffer> <leader>r :!haml -c %<cr>
-  au BufWinEnter,BufNewFile,BufRead,FileType sass noremap <buffer> <leader>r :!sass -c %<cr>
-  au BufWinEnter,BufNewFile,BufRead,FileType coffee noremap <buffer> <leader>r :CoffeeMake!<cr>
+  au FileType smarty,html,css map <buffer> <F3> :!tidy "%"<cr>
+  au FileType ruby,ruby-sinatra,haml,sass,html,css,coffee set expandtab
+  au FileType ruby,ruby-sinatra,haml,sass,html,css,coffee noremap <leader>o :!powder open<cr>
+  au FileType ruby,ruby-sinatra,haml,sass,html,css,coffee noremap <leader>p :!powder restart<cr>
+  au FileType ruby,ruby-sinatra noremap <buffer> <leader>r :!ruby -c %<cr>
+  au FileType haml noremap <buffer> <leader>r :!haml -c %<cr>
+  au FileType sass noremap <buffer> <leader>r :!sass -c %<cr>
+  au FileType coffee noremap <buffer> <leader>r :CoffeeMake!<cr>
   au BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
   au FileType ruby-sinatra let &l:commentrsting('# %s')
 endif

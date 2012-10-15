@@ -12,16 +12,19 @@ class Vim < Formula
     user_dir = File.exists?("/Users/pchampon") ? "/Users/pchampon" : "/Users/flah"
     system "./configure", "--prefix=#{prefix}",
                           "--mandir=#{man}",
-                          "--enable-gui=no",
-                          "--with-x",
                           "--disable-nls",
+                          "--enable-gui=no",
                           "--enable-multibyte",
-                          "--with-tlib=ncurses",
+                          "--enable-clipboard=yes",
+                          "--enable-xterm_clipboard=yes",
                           "--enable-rubyinterp",
                           "--enable-cscope",
                           "--with-ruby-command=#{user_dir}/.rvm/rubies/ruby-1.9.2-p290/bin/ruby",
-                          "--with-features=huge"
+                          "--with-features=huge",
+                          "--with-x",
+                          "--with-tlib=ncurses"
     system "make"
     system "make install"
+    system "cp src/vim src/vimtutor /tmp"
   end
 end
