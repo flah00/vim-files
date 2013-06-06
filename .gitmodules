@@ -61,3 +61,6 @@
 [submodule "bundle/vim-padrino"]
 	path = bundle/vim-padrino
 	url = https://github.com/spllr/vim-padrino.git
+[submodule "bundle/ag.vim"]
+	path = bundle/ag.vim
+	url = https://github.com/rking/ag.vim
