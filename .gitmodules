@@ -55,3 +55,9 @@
 [submodule "bundle/vim-backbone"]
 	path = bundle/vim-backbone
 	url = https://github.com/mklabs/vim-backbone.git
+[submodule "bundle/ag"]
+	path = bundle/ag
+	url = https://github.com/rking/ag.vim
+[submodule "bundle/vim-padrino"]
+	path = bundle/vim-padrino
+	url = https://github.com/spllr/vim-padrino.git

@@ -38,25 +38,20 @@ if &term =~ "screen-" || &term =~ "xterm-"
   set t_Co=256
 endif
 
-noremap <Leader>s :!sort<CR>
+noremap <Leader>a :Ag 
+noremap <Leader>c :cat % \| pbcopy<CR>
 noremap <Leader>g :!align.pl -ss<CR>dd
 noremap <Leader>G :s/ *$//<CR>
 noremap <Leader>l :TlistToggle<CR>
+noremap <Leader>P :!USE_PLYMOUTH=yes rspec %<CR>
+noremap <Leader>s :!sort<CR>
 noremap <Leader>; :NERDTreeToggle<CR>
+noremap <Leader>= :%s/:\([^[:space:]=]\+\)\s*=>\s*/\1: /g<CR>
 inoremap <C-m> <C-x><C-o>
-"inoremap <expr> <cr> pumvisible()? "\<c-y>":"\<c-g>u\<cr>"
-"inoremap <expr> j   pumvisible()?"\<C-N>":"j"
-"inoremap <expr> k   pumvisible()?"\<C-P>":"k"
-"noremap <C-w>l <C-w>2<C-w>
-"noremap <C-w>b <C-w>1<C-w>
 noremap <C-p> :tabnext<cr>
 noremap <C-o> :tabprev<cr>
 noremap <C-n> :tabnew<cr>
 noremap <C-q> :tabclose<cr>
-noremap <Leader>= :%s/:\([^[:space:]=]\+\)\s*=>\s*/\1: /g<CR>
-noremap <Leader>a :!ack 
-noremap <Leader>g :grep -R 
-noremap <Leader>G :grep -R app<Left><Left><Left><Left>
 
 if has("autocmd")
   "filetype plugin on
@@ -72,15 +67,14 @@ if has("autocmd")
   au FileType help nnoremap <buffer> <bs> <c-T>|   " Backspace to go back
 
   au FileType smarty,html,css map <buffer> <F3> :!tidy "%"<cr>
-  au FileType ruby,ruby-sinatra,haml,sass,html,css,coffee set expandtab
-  au FileType ruby,ruby-sinatra,haml,sass,html,css,coffee noremap <leader>o :!powder open<cr>
-  au FileType ruby,ruby-sinatra,haml,sass,html,css,coffee noremap <leader>p :!powder restart<cr>
-  au FileType ruby,ruby-sinatra noremap <buffer> <leader>r :!ruby -c %<cr>
+  au FileType ruby,haml,sass,html,css,coffee set expandtab
+  au FileType ruby,haml,sass,html,css,coffee noremap <leader>o :!powder open<cr>
+  au FileType ruby,haml,sass,html,css,coffee noremap <leader>p :!powder restart<cr>
+  au FileType ruby,<buffer> <leader>r :!ruby -c %<cr>
   au FileType haml noremap <buffer> <leader>r :!haml -c %<cr>
   au FileType sass noremap <buffer> <leader>r :!sass -c %<cr>
   au FileType coffee noremap <buffer> <leader>r :CoffeeMake!<cr>
   au BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
-  au FileType ruby-sinatra let &l:commentrsting('# %s')
 endif
 
 if $VIM_CRONTAB == 'true'
