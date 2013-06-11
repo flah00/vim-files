@@ -70,7 +70,7 @@ if has("autocmd")
   au FileType ruby,haml,sass,html,css,coffee set expandtab
   au FileType ruby,haml,sass,html,css,coffee noremap <leader>o :!powder open<cr>
   au FileType ruby,haml,sass,html,css,coffee noremap <leader>p :!powder restart<cr>
-  au FileType ruby,<buffer> <leader>r :!ruby -c %<cr>
+  au FileType ruby,erb <leader>r :!ruby -c %<cr>
   au FileType haml noremap <buffer> <leader>r :!haml -c %<cr>
   au FileType sass noremap <buffer> <leader>r :!sass -c %<cr>
   au FileType coffee noremap <buffer> <leader>r :CoffeeMake!<cr>
