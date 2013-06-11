@@ -66,15 +66,15 @@ if has("autocmd")
   au FileType help nnoremap <buffer> <cr> <c-]>|   " Enter selects subject
   au FileType help nnoremap <buffer> <bs> <c-T>|   " Backspace to go back
 
-  au FileType smarty,html,css map <buffer> <F3> :!tidy "%"<cr>
-  au FileType ruby,haml,sass,html,css,coffee set expandtab
-  au FileType ruby,haml,sass,html,css,coffee noremap <leader>o :!powder open<cr>
-  au FileType ruby,haml,sass,html,css,coffee noremap <leader>p :!powder restart<cr>
-  au FileType ruby,erb <leader>r :!ruby -c %<cr>
-  au FileType haml noremap <buffer> <leader>r :!haml -c %<cr>
-  au FileType sass noremap <buffer> <leader>r :!sass -c %<cr>
-  au FileType coffee noremap <buffer> <leader>r :CoffeeMake!<cr>
-  au BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
+  au FileType smarty,html,css 								map <buffer> <F3> :!tidy "%"<cr>
+  au FileType ruby,haml,sass,html,css,coffee 	set expandtab
+  au FileType ruby,haml,sass,html,css,coffee 	noremap <leader>o :!powder open<cr>
+  au FileType ruby,haml,sass,html,css,coffee 	noremap <leader>p :!powder restart<cr>
+  au FileType ruby,erb 												noremap <leader>r :!ruby -c %<cr>
+  au FileType haml 														noremap <buffer> <leader>r :!haml -c %<cr>
+  au FileType sass 														noremap <buffer> <leader>r :!sass -c %<cr>
+  au FileType coffee 													noremap <buffer> <leader>r :CoffeeMake!<cr>
+  au BufWritePost *.coffee 										silent CoffeeMake! | cwindow | redraw!
 endif
 
 if $VIM_CRONTAB == 'true'
