@@ -4,8 +4,8 @@ class Vim < Formula
   homepage 'http://www.vim.org/'
   # Get stable versions from hg repo instead of downloading an increasing
   # number of separate patches.
-  url 'https://vim.googlecode.com/hg/', :revision => '6c318419e331'
-  version '7.3.515'
+  url 'https://vim.googlecode.com/hg/', :revision => '0f6ca569356b'
+  version '7.3.1286'
   head 'https://vim.googlecode.com/hg/'
 
   def install
@@ -19,7 +19,7 @@ class Vim < Formula
                           "--enable-xterm_clipboard=yes",
                           "--enable-rubyinterp",
                           "--enable-cscope",
-                          "--with-ruby-command=#{user_dir}/.rvm/rubies/ruby-1.9.2-p290/bin/ruby",
+                          "--with-ruby-command=#{user_dir}/.rbenv/versions/2.0.0-p0/bin/ruby",
                           "--with-features=huge",
                           "--with-x",
                           "--with-tlib=ncurses"
