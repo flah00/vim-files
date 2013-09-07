@@ -9,6 +9,9 @@ if [ ${1:-nocp} = "cp" ]; then
     echo "diff -q $orig $file &>/dev/null || cp $orig $file"
   done
 
+elif [ ${1:-nocp} = "find" ]; then
+  find . \( $skip \) -prune -o -type f -print
+
 else
   (for file in `find . \( $skip \) -prune -o -type f -print`
   do

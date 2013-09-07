@@ -9,7 +9,7 @@ class Vim < Formula
   head 'https://vim.googlecode.com/hg/'
 
   def install
-    user_dir = File.exists?("/Users/pchampon") ? "/Users/pchampon" : "/Users/flah"
+    user_dir = File.exists?("/Users/flah") ? "/Users/flah" : "/Users/pchampon"
     system "./configure", "--prefix=#{prefix}",
                           "--mandir=#{man}",
                           "--disable-nls",
