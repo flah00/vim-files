@@ -45,6 +45,7 @@ noremap <Leader>G :s/ *$//<CR>
 noremap <Leader>l :TlistToggle<CR>
 noremap <Leader>P :!USE_PLYMOUTH=yes rspec %<CR>
 noremap <Leader>s :!sort<CR>
+noremap <Leader>t :!aws --profile prod-east cloudformation validate-template --template-body "$(cat %)"<CR>
 noremap <Leader>; :NERDTreeToggle<CR>
 noremap <Leader>= :%s/:\([^[:space:]=]\+\)\s*=>\s*/\1: /g<CR>
 inoremap <C-m> <C-x><C-o>
@@ -75,6 +76,11 @@ if has("autocmd")
   au FileType sass noremap <buffer> <leader>r :!sass -c %<cr>
   au FileType coffee noremap <buffer> <leader>r :CoffeeMake!<cr>
   au BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
+
+	autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
+	      \ pathogen#split(&tags) +
+	      \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
+
 endif
 
 if $VIM_CRONTAB == 'true'
