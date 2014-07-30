@@ -3,4 +3,6 @@ find * \( -name .git\* -o -name vim.rb \) -prune -o -print| cpio -pdm ~/.vim
 cp .vimrc ~
 cp -i .Xdefaults .Xresources ~
 set -x
-brew search the_silver_searcher && brew list the_silver_searcher || brew install the_silver_searcher
+if `type brew &>/dev/null`; then
+  brew search the_silver_searcher && brew list the_silver_searcher || brew install the_silver_searcher
+fi
