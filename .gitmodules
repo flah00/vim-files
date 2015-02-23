@@ -67,3 +67,18 @@
 [submodule "bundle/ctrlp.vim"]
 	path = bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim
+[submodule "bundle/vim-sexp"]
+	path = bundle/vim-sexp
+	url = https://github.com/guns/vim-sexp.git
+[submodule "bundle/vim-sexp-mappings-for-regular-people"]
+	path = bundle/vim-sexp-mappings-for-regular-people
+	url = https://github.com/tpope/vim-sexp-mappings-for-regular-people.git
+[submodule "bundle/vim-fireplace"]
+	path = bundle/vim-fireplace
+	url = https://github.com/tpope/vim-fireplace.git
+[submodule "bundle/vim-leiningen"]
+	path = bundle/vim-leiningen
+	url = https://github.com/tpope/vim-leiningen.git
+[submodule "bundle/rainbow_parentheses"]
+	path = bundle/rainbow_parentheses
+	url = https://github.com/kien/rainbow_parentheses.vim.git
