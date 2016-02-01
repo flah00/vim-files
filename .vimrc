@@ -39,11 +39,11 @@ if &term =~ "screen-" || &term =~ "xterm-"
 endif
 
 noremap <Leader>a :Ag --ignore log --ignore tmp 
-noremap <Leader>c :cat % \| pbcopy<CR>
+noremap <Leader>b :!ctags -R --languages=ruby --exclude=.git --exclude=log .<CR>
+noremap <Leader>c :!cat % \| pbcopy<CR>
 noremap <Leader>g :!align.pl -ss<CR>dd
 noremap <Leader>G :s/ *$//<CR>
 noremap <Leader>l :TlistToggle<CR>
-noremap <Leader>P :!USE_PLYMOUTH=yes rspec %<CR>
 noremap <Leader>s :!sort<CR>
 noremap <Leader>t :!aws --profile prod-east cloudformation validate-template --template-body "$(cat %)"<CR>
 noremap <Leader>; :NERDTreeToggle<CR>
