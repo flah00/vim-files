@@ -91,3 +91,6 @@
 [submodule "bundle/jshint.vim"]
 	path = bundle/jshint.vim
 	url = https://github.com/wookiehangover/jshint.vim.git
+[submodule "bundle/textile.vim"]
+	path = bundle/textile.vim
+	url = https://github.com/timcharper/textile.vim.git
