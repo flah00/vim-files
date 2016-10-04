@@ -69,6 +69,7 @@ if has("autocmd")
 
   au FileType smarty,html,css map <buffer> <F3> :!tidy "%"<cr>
   au FileType ruby,haml,sass,html,css,coffee,dockerfile,javascript,json,java,sh,bash,sql set expandtab
+  au FileType json noremap <leader>j :%!python -m json.tool<cr>:%s/    /	/g<cr>
   au FileType ruby,erb noremap <leader>r :!ruby -c %<cr>
   au FileType haml noremap <buffer> <leader>r :!haml -c %<cr>
   au FileType sass noremap <buffer> <leader>r :!sass -c %<cr>
