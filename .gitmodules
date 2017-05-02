@@ -97,3 +97,9 @@
 [submodule "bundle/vim-mustache-handlebars"]
 	path = bundle/vim-mustache-handlebars
 	url = https://github.com/mustache/vim-mustache-handlebars.git
+[submodule "bundle/vim-jenkinsfile"]
+	path = bundle/vim-jenkinsfile
+	url = https://github.com/martinda/Jenkinsfile-vim-syntax
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = https://github.com/fatih/vim-go
