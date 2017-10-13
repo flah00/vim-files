@@ -32,6 +32,7 @@ set  textwidth=80
 set  visualbell t_vb=           " turn off error beep/flash
 set  whichwrap=b,s,h,l,<,>,[,]  " move freely between files
 set  clipboard=unnamed
+set  diffopt+=iwhite
 
 syntax on
 if &term =~ "screen-" || &term =~ "xterm-"
