@@ -81,6 +81,8 @@ if has("autocmd")
 	      \ pathogen#split(&tags) +
 	      \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
 
+	autocmd FileType go nmap <leader>b  <Plug>(go-build)
+	autocmd FileType go nmap <leader>t  <Plug>(go-test)
 endif
 
 if $VIM_CRONTAB == 'true'
@@ -104,8 +106,7 @@ let g:rubycomplete_rails = 1
 let g:html_number_lines = 0
 
 " pathogen settings
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+execute pathogen#infect()
 
 colorscheme solarized
 "let psc_style='defdark'
@@ -120,3 +121,6 @@ set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
 let coffee_make_options = '-b -o tmp'
 let g:ctrlp_map = '<c-i>'
+
+" go
+let g:go_fmt_command = "goimports"
