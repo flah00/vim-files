@@ -39,6 +39,9 @@ if &term =~ "screen-" || &term =~ "xterm-"
   set t_Co=256
 endif
 
+noremap <Leader>1 :diffg RE<cr>  " get from REMOTE
+noremap <Leader>2 :diffg BA<cr>  " get from BASE
+noremap <Leader>3 :diffg LO<cr>  " get from LOCAL
 noremap <Leader>a :Ag --ignore log --ignore tmp 
 noremap <Leader>b :!ctags -R --languages=ruby --exclude=.git --exclude=log .<CR>
 noremap <Leader>c :!cat % \| pbcopy<CR>
