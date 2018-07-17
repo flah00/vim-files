@@ -3,41 +3,38 @@ set  nocompatible               " use vim defaults
 "set novisualbell               " turn off visual bell
 "set nowrap
 "set viminfo='20,<50,s10,h
-set  autoindent
-set  autowrite                  " Automatically save before commands like :next and :make.
-set  background=dark
-set  backspace=eol,start,indent
-set  encoding=utf-8
-set  hidden
-set  history=100
-set  hlsearch                   " Highlight search results.
-set  ignorecase                 " Do case insensitive matching.
-set  incsearch                  " Incremental search.
-set  modeline                   " last lines in document sets vim mode
-set  modelines=2                " number lines checked for modelines
-set  mouse=a
-set  nobackup                   " do not keep a backup file
-set  nocp
-set  nostartofline              " don't jump to first character when paging
-set  number                     " Show linenums.
-set  ruler
-set  shiftwidth=2
-set  shortmess=atI              " Abbreviate messages
-set  showcmd                    " Show (partial) command in status line.
-set  showmatch                  " Show matching brackets.
-set  smartcase                  " Do smart case matching.
-set  tabstop=2
-set  tags+=tags;/,tmp/tags
-set  textwidth=80
-set  visualbell t_vb=           " turn off error beep/flash
-set  whichwrap=b,s,h,l,<,>,[,]  " move freely between files
-set  clipboard=unnamed
-set  diffopt+=iwhite
+set autoindent
+set autowrite                  " Automatically save before commands like :next and :make.
+set background=dark
+set backspace=eol,start,indent
+set encoding=utf-8
+set hidden
+set history=100
+set hlsearch                   " Highlight search results.
+set ignorecase                 " Do case insensitive matching.
+set incsearch                  " Incremental search.
+set modeline                   " last lines in document sets vim mode
+set modelines=2                " number lines checked for modelines
+set mouse=a
+set nobackup                   " do not keep a backup file
+set nocp
+set nostartofline              " don't jump to first character when paging
+set number                     " Show linenums.
+set ruler
+set shiftwidth=2
+set shortmess=atI              " Abbreviate messages
+set showcmd                    " Show (partial) command in status line.
+set showmatch                  " Show matching brackets.
+set smartcase                  " Do smart case matching.
+set tabstop=2
+set tags+=tags;/,tmp/tags
+set textwidth=80
+set visualbell t_vb=           " turn off error beep/flash
+set whichwrap=b,s,h,l,<,>,[,]  " move freely between files
+set clipboard=unnamed
+set diffopt+=iwhite
 
 syntax on
-if &term =~ "screen-" || &term =~ "xterm-"
-  set t_Co=256
-endif
 
 noremap <Leader>1 :diffg RE<cr>  " get from REMOTE
 noremap <Leader>2 :diffg BA<cr>  " get from BASE
@@ -72,7 +69,7 @@ if has("autocmd")
   au FileType help nnoremap <buffer> <bs> <c-T>|   " Backspace to go back
 
   au FileType smarty,html,css map <buffer> <F3> :!tidy "%"<cr>
-  au FileType ruby,haml,sass,html,css,coffee,dockerfile,javascript,json,java,sh,bash,sql set expandtab
+	au FileType jenkinsfile,groovy,ruby,haml,sass,html,css,coffee,dockerfile,javascript,json,java,sh,bash,sql set expandtab
   au FileType json noremap <leader>j :%!python -m json.tool<cr>:%s/    /	/g<cr>
   au FileType ruby,erb noremap <leader>r :!ruby -c %<cr>
   au FileType haml noremap <buffer> <leader>r :!haml -c %<cr>
@@ -86,6 +83,15 @@ if has("autocmd")
 
 	autocmd FileType go nmap <leader>b  <Plug>(go-build)
 	autocmd FileType go nmap <leader>t  <Plug>(go-test)
+endif
+
+if exists('+termguicolors')
+	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+	set termguicolors
+endif
+if &term =~ "screen-" || &term =~ "xterm-"
+  set t_Co=256
 endif
 
 if $VIM_CRONTAB == 'true'
@@ -111,7 +117,7 @@ let g:html_number_lines = 0
 " pathogen settings
 execute pathogen#infect()
 
-colorscheme solarized
+colorscheme solarized8
 "let psc_style='defdark'
 "colorscheme ps_color
 "hi Comment ctermfg=240
