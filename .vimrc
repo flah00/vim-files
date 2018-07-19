@@ -36,9 +36,9 @@ set diffopt+=iwhite
 
 syntax on
 
-noremap <Leader>1 :diffg RE<cr>  " get from REMOTE
-noremap <Leader>2 :diffg BA<cr>  " get from BASE
-noremap <Leader>3 :diffg LO<cr>  " get from LOCAL
+noremap <Leader>1 :diffg REMOTE<cr>  " get from REMOTE
+noremap <Leader>2 :diffg BASE<cr>  " get from BASE
+noremap <Leader>3 :diffg LOCAL<cr>  " get from LOCAL
 noremap <Leader>a :Ag --ignore log --ignore tmp 
 noremap <Leader>b :!ctags -R --languages=ruby --exclude=.git --exclude=log .<CR>
 noremap <Leader>c :!cat % \| pbcopy<CR>
@@ -69,26 +69,26 @@ if has("autocmd")
   au FileType help nnoremap <buffer> <bs> <c-T>|   " Backspace to go back
 
   au FileType smarty,html,css map <buffer> <F3> :!tidy "%"<cr>
-	au FileType jenkinsfile,groovy,ruby,haml,sass,html,css,coffee,dockerfile,javascript,json,java,sh,bash,sql set expandtab
-  au FileType json noremap <leader>j :%!python -m json.tool<cr>:%s/    /	/g<cr>
+  au FileType jenkinsfile,groovy,ruby,haml,sass,html,css,coffee,dockerfile,javascript,json,java,sh,bash,sql set expandtab
+  au FileType json noremap <leader>j :%!python -m json.tool<cr>:%s/    /  /g<cr>
   au FileType ruby,erb noremap <leader>r :!ruby -c %<cr>
   au FileType haml noremap <buffer> <leader>r :!haml -c %<cr>
   au FileType sass noremap <buffer> <leader>r :!sass -c %<cr>
   au FileType coffee noremap <buffer> <leader>r :CoffeeMake!<cr>
   au BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
 
-	autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
-	      \ pathogen#split(&tags) +
-	      \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
+  autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
+        \ pathogen#split(&tags) +
+        \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
 
-	autocmd FileType go nmap <leader>b  <Plug>(go-build)
-	autocmd FileType go nmap <leader>t  <Plug>(go-test)
+  autocmd FileType go nmap <leader>b  <Plug>(go-build)
+  autocmd FileType go nmap <leader>t  <Plug>(go-test)
 endif
 
 if exists('+termguicolors')
-	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-	set termguicolors
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
 endif
 if &term =~ "screen-" || &term =~ "xterm-"
   set t_Co=256
