@@ -36,6 +36,7 @@ set diffopt+=iwhite
 
 syntax on
 
+map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 noremap <Leader>1 :diffg REMOTE<cr>  " get from REMOTE
 noremap <Leader>2 :diffg BASE<cr>  " get from BASE
 noremap <Leader>3 :diffg LOCAL<cr>  " get from LOCAL
