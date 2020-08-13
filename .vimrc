@@ -47,7 +47,7 @@ noremap <Leader>g :!align.pl -ss<CR>dd
 noremap <Leader>G :s/ *$//<CR>
 noremap <Leader>l :TlistToggle<CR>
 noremap <Leader>s :!sort<CR>
-noremap <Leader>t :!aws --profile prod-east cloudformation validate-template --template-body "$(cat %)"<CR>
+noremap <Leader>t :!ruby -rjson -e 'puts JSON.parse(File.read(ARGV[0])).to_json' % >/tmp/json.out && aws --profile prod-east cloudformation validate-template --template-body "$(cat /tmp/json.out)"<CR>
 noremap <Leader>; :NERDTreeToggle<CR>
 noremap <Leader>= :%s/:\([^[:space:]=]\+\)\s*=>\s*/\1: /g<CR>
 inoremap <C-m> <C-x><C-o>
@@ -70,7 +70,7 @@ if has("autocmd")
   au FileType help nnoremap <buffer> <bs> <c-T>|   " Backspace to go back
 
   au FileType smarty,html,css map <buffer> <F3> :!tidy "%"<cr>
-  au FileType jenkinsfile,groovy,ruby,haml,sass,html,css,coffee,dockerfile,javascript,json,java,sh,bash,sql set expandtab
+  au FileType jsonnet,jenkinsfile,groovy,ruby,haml,sass,html,css,coffee,dockerfile,javascript,json,java,sh,bash,sql set expandtab
   au FileType json noremap <leader>j :%!python -m json.tool<cr>:%s/    /  /g<cr>
   au FileType ruby,erb noremap <leader>r :!ruby -c %<cr>
   au FileType haml noremap <buffer> <leader>r :!haml -c %<cr>
@@ -91,9 +91,9 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-if &term =~ "screen-" || &term =~ "xterm-"
-  set t_Co=256
-endif
+"if &term =~ "screen-" || &term =~ "xterm-"
+  "set t_Co=256
+"endif
 
 if $VIM_CRONTAB == 'true'
   set nobackup
@@ -124,7 +124,7 @@ colorscheme solarized8
 "hi Comment ctermfg=240
 "colorscheme jellybeans
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y\ 
-set statusline+=%{fugitive#statusline()}\ 
+set statusline+=%{FugitiveStatusline()}\ 
 set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}  " highlight
 set statusline+=%b,0x%-8B                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
