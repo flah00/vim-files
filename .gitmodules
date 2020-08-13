@@ -100,3 +100,6 @@
 [submodule "bundle/vim-solarized8"]
 	path = bundle/vim-solarized8
 	url = https://github.com/lifepillar/vim-solarized8
+[submodule "bundle/vim-jsonnet"]
+	path = bundle/vim-jsonnet
+	url = https://github.com/google/vim-jsonnet
