@@ -85,3 +85,6 @@
 [submodule "bundle/neomake"]
 	path = bundle/neomake
 	url = https://github.com/neomake/neomake
+[submodule "bundle/vim-solidity"]
+	path = bundle/vim-solidity
+	url = https://github.com/thesis/vim-solidity
