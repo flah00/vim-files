@@ -9,7 +9,7 @@ set background=dark
 set backspace=eol,start,indent
 set encoding=utf-8
 set hidden
-set history=100
+set history=1000
 set hlsearch                   " Highlight search results.
 set ignorecase                 " Do case insensitive matching.
 set incsearch                  " Incremental search.
@@ -31,7 +31,7 @@ set tags+=tags;/,tmp/tags
 set textwidth=80
 set visualbell t_vb=           " turn off error beep/flash
 set whichwrap=b,s,h,l,<,>,[,]  " move freely between files
-set clipboard=unnamed
+set clipboard=unnamedplus
 set diffopt+=iwhite
 
 syntax on
@@ -73,28 +73,16 @@ if has("autocmd")
   au FileType jsonnet,jenkinsfile,groovy,ruby,haml,sass,html,css,coffee,dockerfile,javascript,json,java,sh,bash,sql set expandtab
   au FileType json noremap <leader>j :%!python -m json.tool<cr>:%s/    /  /g<cr>
   au FileType ruby,erb noremap <leader>r :!ruby -c %<cr>
-  au FileType haml noremap <buffer> <leader>r :!haml -c %<cr>
-  au FileType sass noremap <buffer> <leader>r :!sass -c %<cr>
-  au FileType coffee noremap <buffer> <leader>r :CoffeeMake!<cr>
-  au BufWritePost *.coffee silent CoffeeMake! | cwindow | redraw!
 
   autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
         \ pathogen#split(&tags) +
         \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
 
+
+	autocmd FileType lua setlocal iskeyword+=:
+
   autocmd FileType go nmap <leader>b  <Plug>(go-build)
   autocmd FileType go nmap <leader>t  <Plug>(go-test)
-endif
-
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
-
-if $VIM_CRONTAB == 'true'
-  set nobackup
-  set nowritebackup
 endif
 
 " Ruby goodies
@@ -116,15 +104,13 @@ let g:html_number_lines = 0
 execute pathogen#infect()
 
 colorscheme solarized
-set t_Co=256
-let g:solarized_termcolors=256
-colorscheme solarized
+"let g:solarized_termcolors=256
 "let psc_style='defdark'
 "colorscheme ps_color
 "hi Comment ctermfg=240
 "colorscheme jellybeans
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y\ 
-set statusline+=%{FugitiveStatusline()}\ 
+set statusline+=%{fugitive#statusline()}\ 
 set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}  " highlight
 set statusline+=%b,0x%-8B                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
