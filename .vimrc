@@ -91,9 +91,6 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-"if &term =~ "screen-" || &term =~ "xterm-"
-  "set t_Co=256
-"endif
 
 if $VIM_CRONTAB == 'true'
   set nobackup
@@ -118,7 +115,10 @@ let g:html_number_lines = 0
 " pathogen settings
 execute pathogen#infect()
 
-colorscheme solarized8
+colorscheme solarized
+set t_Co=256
+let g:solarized_termcolors=256
+colorscheme solarized
 "let psc_style='defdark'
 "colorscheme ps_color
 "hi Comment ctermfg=240
