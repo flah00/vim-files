@@ -1,3 +1,4 @@
+
 augroup filetypedetect
 	au BufNewFile,BufRead *.hamlc set filetype=haml
 	au BufNewFile,BufRead *.eco set filetype=eco
