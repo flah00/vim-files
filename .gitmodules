@@ -73,10 +73,6 @@
 [submodule "bundle/neomake"]
 	path = bundle/neomake
 	url = https://github.com/neomake/neomake
-[submodule "bundle/vim-solidity"]
-	path = bundle/vim-solidity
-	url = https://github.com/thesis/vim-solidity
-	branch = main
 [submodule "bundle/vim-javascript"]
 	path = bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
