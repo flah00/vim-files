@@ -1,0 +1,57 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Foo	bundle/vim-ruby/spec/indent/method_definitions_spec.rb	/^      class Foo$/;"	c
+Foo	bundle/vim-ruby/spec/syntax/operators_spec.rb	/^        class Foo < Bar$/;"	c
+InnerClass	bundle/vim-ruby/spec/indent/indent_access_modifier_spec.rb	/^        class InnerClass$/;"	c	class:OuterClass
+OuterClass	bundle/vim-ruby/spec/indent/indent_access_modifier_spec.rb	/^      class OuterClass$/;"	c
+Vim	vim.rb	/^class Vim < Formula$/;"	c
+X	bundle/vim-ruby/spec/indent/blocks_spec.rb	/^      module X$/;"	m
+assert_correct_highlighting	bundle/vim-ruby/spec/spec_helper.rb	/^  def assert_correct_highlighting(extension='rb', string, patterns, group)$/;"	f
+assert_correct_indenting	bundle/vim-ruby/spec/spec_helper.rb	/^  def assert_correct_indenting(extension='rb', string)$/;"	f
+bar	bundle/vim-ruby/spec/indent/continuations_spec.rb	/^      def bar($/;"	f
+baz	bundle/vim-ruby/spec/indent/end_constructs_spec.rb	/^                def baz$/;"	f	class:foo
+end	bundle/vim-ruby/spec/syntax/methods_spec.rb	/^      def end end$/;"	f
+foo	bundle/vim-ruby/spec/indent/basic_spec.rb	/^      def foo$/;"	f
+foo	bundle/vim-ruby/spec/indent/blocks_spec.rb	/^      def foo$/;"	f
+foo	bundle/vim-ruby/spec/indent/blocks_spec.rb	/^      def foo(job)$/;"	f
+foo	bundle/vim-ruby/spec/indent/continuations_spec.rb	/^      def foo$/;"	f
+foo	bundle/vim-ruby/spec/indent/end_constructs_spec.rb	/^          def foo$/;"	f
+foo	bundle/vim-ruby/spec/indent/method_definitions_spec.rb	/^        def foo = 1 + 1$/;"	f	class:foo.foo!.foo?.foo.foo.foo
+foo	bundle/vim-ruby/spec/indent/method_definitions_spec.rb	/^        def foo($/;"	f	class:foo.foo!.foo?.foo.foo.foo.foo.foo.foo.foo
+foo	bundle/vim-ruby/spec/indent/method_definitions_spec.rb	/^        def foo() = 1 + 1$/;"	f	class:foo.foo!.foo?.foo.foo
+foo	bundle/vim-ruby/spec/indent/method_definitions_spec.rb	/^        def foo(bar = default_function()) = puts(bar)$/;"	f	class:foo.foo!.foo?.foo.foo.foo.foo.foo
+foo	bundle/vim-ruby/spec/indent/method_definitions_spec.rb	/^        def foo(bar = default_function()) =$/;"	f	class:foo.foo!.foo?.foo.foo.foo.foo.foo.foo
+foo	bundle/vim-ruby/spec/indent/method_definitions_spec.rb	/^        def foo(bar) = bar + 1$/;"	f	class:foo.foo!.foo?.foo
+foo	bundle/vim-ruby/spec/indent/method_definitions_spec.rb	/^        def foo(bar) = puts(bar)$/;"	f
+foo	bundle/vim-ruby/spec/indent/method_definitions_spec.rb	/^        def foo(bar) =$/;"	f	class:foo.foo!.foo?.foo.foo.foo.foo
+foo	bundle/vim-ruby/spec/indent/method_definitions_spec.rb	/^        def foo(bar)=puts(bar)$/;"	f	class:foo.foo!.foo?
+foo	bundle/vim-ruby/spec/syntax/methods_spec.rb	/^      def foo (a, b) = bar$/;"	f
+foo	bundle/vim-ruby/spec/syntax/methods_spec.rb	/^      def foo = bar$/;"	f
+foo	bundle/vim-ruby/spec/syntax/methods_spec.rb	/^      def foo bar$/;"	f
+foo	bundle/vim-ruby/spec/syntax/methods_spec.rb	/^      def foo bar:; end$/;"	f
+foo	bundle/vim-ruby/spec/syntax/methods_spec.rb	/^      def foo bar=:baz$/;"	f
+foo	bundle/vim-ruby/spec/syntax/operators_spec.rb	/^          def foo &bar$/;"	f
+foo	bundle/vim-ruby/spec/syntax/operators_spec.rb	/^        def foo **bar$/;"	f
+foo	bundle/vim-ruby/spec/syntax/operators_spec.rb	/^        def foo *bar$/;"	f
+foo	bundle/vim-ruby/spec/syntax/operators_spec.rb	/^        def foo(&bar)$/;"	f
+foo	bundle/vim-ruby/spec/syntax/operators_spec.rb	/^        def foo(*)$/;"	f
+foo	bundle/vim-ruby/spec/syntax/operators_spec.rb	/^        def foo(**)$/;"	f
+foo	bundle/vim-ruby/spec/syntax/operators_spec.rb	/^        def foo(**bar)$/;"	f
+foo	bundle/vim-ruby/spec/syntax/operators_spec.rb	/^        def foo(*bar)$/;"	f
+foo	bundle/vim-ruby/spec/syntax/operators_spec.rb	/^        def foo(bar,$/;"	f
+foo!	bundle/vim-ruby/spec/indent/method_definitions_spec.rb	/^        def foo!(bar) = puts(bar)$/;"	f	class:foo
+foo?	bundle/vim-ruby/spec/indent/method_definitions_spec.rb	/^        def foo?(bar) = puts(bar)$/;"	f	class:foo.foo!
+get_regex	bundle/vim-ruby/spec/syntax/statement_modifiers_spec.rb	/^      def get_regex$/;"	f
+hello	bundle/vim-ruby/spec/syntax/symbols_spec.rb	/^      def hello$/;"	f
+install	vim.rb	/^  def install$/;"	f	class:Vim
+method	bundle/vim-ruby/spec/indent/indent_access_modifier_spec.rb	/^            def method; end$/;"	f	class:OuterClass.InnerClass
+method	bundle/vim-ruby/spec/indent/indent_access_modifier_spec.rb	/^          def method; end$/;"	f	class:OuterClass
+method	bundle/vim-ruby/spec/indent/indent_access_modifier_spec.rb	/^          def method; end$/;"	f	class:OuterClass.InnerClass
+method	bundle/vim-ruby/spec/indent/indent_access_modifier_spec.rb	/^        def method; end$/;"	f	class:OuterClass
+one	bundle/vim-ruby/spec/indent/basic_spec.rb	/^      def one$/;"	f
+one	bundle/vim-ruby/spec/indent/method_definitions_spec.rb	/^        def one(x)$/;"	f
+youtube_video	bundle/vim-ruby/spec/syntax/strings/heredoc_spec.rb	/^        def youtube_video(token, width = 360, height = 215)$/;"	f
