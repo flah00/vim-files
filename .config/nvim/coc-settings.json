@@ -1,0 +1,11 @@
+
+{
+  "npm.binPath": "~/.nvm/versions/node/v14.21.3/bin/yarn",
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-lsp",
+      "filetypes": ["terraform"],
+      "initializationOptions": {}
+    }
+  }
+}
