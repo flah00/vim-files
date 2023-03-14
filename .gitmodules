@@ -1,84 +1,18 @@
-[submodule "bundle/vim-surround"]
-	path = pack/bundle/start/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "bundle/vim-endwise"]
-	path = pack/bundle/start/vim-endwise
-	url = https://github.com/tpope/vim-endwise.git
-[submodule "bundle/vim-fugitive"]
-	path = pack/bundle/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule "bundle/vim-markdown"]
-	path = pack/bundle/start/vim-markdown
-	url = https://github.com/tpope/vim-markdown.git
-[submodule "bundle/vim-unimpaired"]
-	path = pack/bundle/start/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "bundle/nerdtree"]
-	path = pack/bundle/start/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/nerdcommenter"]
-	path = pack/bundle/start/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/vim-ruby"]
-	path = pack/bundle/start/vim-ruby
-	url = https://github.com/vim-ruby/vim-ruby.git
 [submodule "bundle/vim-ruby-sinatra"]
 	path = bundle/vim-ruby-sinatra
 	url = git://github.com/hallison/vim-ruby-sinatra.git
-[submodule "bundle/vim-bundler"]
-	path = pack/bundle/start/vim-bundler
-	url = https://github.com/tpope/vim-bundler.git
-[submodule "bundle/ag.vim"]
-	path = pack/bundle/start/ag.vim
-	url = https://github.com/rking/ag.vim
-[submodule "bundle/ctrlp.vim"]
-	path = pack/bundle/start/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim
 [submodule "bundle/vim-sexp"]
 	path = bundle/vim-sexp
 	url = https://github.com/guns/vim-sexp.git
 [submodule "bundle/rainbow_parentheses"]
 	path = bundle/rainbow_parentheses
 	url = https://github.com/kien/rainbow_parentheses.vim.git
-[submodule "bundle/vim-repeat"]
-	path = pack/bundle/start/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
 [submodule "bundle/ruby-minitest"]
 	path = pack/bundle/start/ruby-minitest
 	url = https://github.com/sunaku/vim-ruby-minitest.git
-[submodule "bundle/vim-json"]
-	path = pack/bundle/start/vim-json
-	url = https://github.com/elzr/vim-json.git
-[submodule "bundle/textile.vim"]
-	path = pack/bundle/start/textile.vim
-	url = https://github.com/timcharper/textile.vim.git
-[submodule "bundle/vim-mustache-handlebars"]
-	path = pack/bundle/start/vim-mustache-handlebars
-	url = https://github.com/mustache/vim-mustache-handlebars.git
-[submodule "bundle/vim-jenkinsfile"]
-	path = pack/bundle/start/vim-jenkinsfile
-	url = https://github.com/martinda/Jenkinsfile-vim-syntax
-[submodule "bundle/vim-go"]
-	path = pack/bundle/start/vim-go
-	url = https://github.com/fatih/vim-go
-[submodule "bundle/vim-jsonnet"]
-	path = pack/bundle/start/vim-jsonnet
-	url = https://github.com/google/vim-jsonnet
-[submodule "bundle/neomake"]
-	path = pack/bundle/start/neomake
-	url = https://github.com/neomake/neomake
-[submodule "bundle/vim-javascript"]
-	path = pack/bundle/start/vim-javascript
-	url = https://github.com/pangloss/vim-javascript
-[submodule "bundle/vim-jsx"]
-	path = pack/bundle/start/vim-jsx
-	url = https://github.com/MaxMEllon/vim-jsx-pretty
 [submodule "bundle/vim-colors-solarized"]
 	path = pack/bundle/start/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-terraform"]
 	path = pack/bundle/start/vim-terraform
 	url = https://github.com/hashivim/vim-terraform.git
-[submodule "bundle/auto-pairs"]
-	path = pack/bundle/start/auto-pairs
-	url = https://github.com/jiangmiao/auto-pairs
