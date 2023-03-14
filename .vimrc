@@ -1,11 +1,10 @@
 set  nocompatible               " use vim defaults
-
 "set novisualbell               " turn off visual bell
 "set nowrap
 "set viminfo='20,<50,s10,h
 set autoindent
 set autowrite                  " Automatically save before commands like :next and :make.
-set background=dark
+set background=light
 set backspace=eol,start,indent
 set encoding=utf-8
 set hidden
@@ -34,28 +33,6 @@ set whichwrap=b,s,h,l,<,>,[,]  " move freely between files
 set clipboard=unnamedplus
 set diffopt+=iwhite
 
-syntax on
-
-map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-noremap <Leader>1 :diffg REMOTE<cr>  " get from REMOTE
-noremap <Leader>2 :diffg BASE<cr>  " get from BASE
-noremap <Leader>3 :diffg LOCAL<cr>  " get from LOCAL
-noremap <Leader>a :Ag --ignore log --ignore tmp 
-noremap <Leader>b :!ctags -R --languages=ruby --exclude=.git --exclude=log .<CR>
-noremap <Leader>c :!cat % \| pbcopy<CR>
-noremap <Leader>g :!align.pl -ss<CR>dd
-noremap <Leader>G :s/ *$//<CR>
-noremap <Leader>l :TlistToggle<CR>
-noremap <Leader>s :!sort<CR>
-noremap <Leader>t :!ruby -rjson -e 'puts JSON.parse(File.read(ARGV[0])).to_json' % >/tmp/json.out && aws --profile prod-east cloudformation validate-template --template-body "$(cat /tmp/json.out)"<CR>
-noremap <Leader>; :NERDTreeToggle<CR>
-noremap <Leader>= :%s/:\([^[:space:]=]\+\)\s*=>\s*/\1: /g<CR>
-inoremap <C-m> <C-x><C-o>
-noremap <C-p> :tabnext<cr>
-noremap <C-o> :tabprev<cr>
-noremap <C-n> :tabnew<cr>
-noremap <C-q> :tabclose<cr>
-
 if has("autocmd")
   "filetype plugin on
   filetype indent plugin on
@@ -74,15 +51,12 @@ if has("autocmd")
   au FileType json noremap <leader>j :%!python -m json.tool<cr>:%s/    /  /g<cr>
   au FileType ruby,erb noremap <leader>r :!ruby -c %<cr>
 
-  autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
-        \ pathogen#split(&tags) +
-        \ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
-
 
 	autocmd FileType lua setlocal iskeyword+=:
 
   autocmd FileType go nmap <leader>b  <Plug>(go-build)
   autocmd FileType go nmap <leader>t  <Plug>(go-test)
+  autocmd FileType terraform nmap <Leader>t :!cd $(dirname %); terraform 
 endif
 
 " Ruby goodies
@@ -99,23 +73,39 @@ let g:rubycomplete_rails = 1
 " let g:html_ignore_folding = 1
 " let g:html_dynamic_folds = 1
 let g:html_number_lines = 0
+let g:terraform_align = 1
+let g:terraform_fmt_on_save = 1
+let g:terraform_fold_sections = 0
 
-" pathogen settings
-execute pathogen#infect()
-
+"execute togglebg#map("<F5>")
+syntax on
 colorscheme solarized
-"let g:solarized_termcolors=256
-"let psc_style='defdark'
-"colorscheme ps_color
-"hi Comment ctermfg=240
-"colorscheme jellybeans
+
+"nnoremap <Leader>bg call togglebg#map("<F5>")<CR>
+map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+noremap <Leader>a :Ag --ignore log --ignore tmp 
+noremap <Leader>b :!ctags -R --languages=ruby --exclude=.git --exclude=log .<CR>
+noremap <Leader>c :!xsel -i < %<CR><CR>
+noremap <Leader>p :r!xsel -o<CR>:1<CR>dd<CR>
+noremap <Leader>g :!align.pl -ss<CR>dd
+noremap <Leader>G :s/ *$//<CR>
+noremap <Leader>l :TlistToggle<CR>
+noremap <Leader>s :!sort<CR>
+"noremap <Leader>t :!ruby -rjson -e 'puts JSON.parse(File.read(ARGV[0])).to_json' % >/tmp/json.out && aws --profile prod-east cloudformation validate-template --template-body "$(cat /tmp/json.out)"<CR>
+noremap <Leader>; :NERDTreeToggle<CR>
+"noremap <Leader>= :%s/:\([^[:space:]=]\+\)\s*=>\s*/\1: /g<CR>
+inoremap <C-m> <C-x><C-o>
+noremap <C-p> :tabnext<cr>
+noremap <C-o> :tabprev<cr>
+noremap <C-n> :tabnew<cr>
+noremap <C-q> :tabclose<cr>
+
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y\ 
-set statusline+=%{fugitive#statusline()}\ 
+set statusline+=%{FugitiveStatusline()}\ 
 set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}  " highlight
 set statusline+=%b,0x%-8B                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
-let coffee_make_options = '-b -o tmp'
 let g:ctrlp_map = '<c-i>'
 
 " go
