@@ -1,18 +1,3 @@
-[submodule "bundle/vim-ruby-sinatra"]
-	path = bundle/vim-ruby-sinatra
-	url = git://github.com/hallison/vim-ruby-sinatra.git
-[submodule "bundle/vim-sexp"]
-	path = bundle/vim-sexp
-	url = https://github.com/guns/vim-sexp.git
-[submodule "bundle/rainbow_parentheses"]
-	path = bundle/rainbow_parentheses
-	url = https://github.com/kien/rainbow_parentheses.vim.git
 [submodule "bundle/ruby-minitest"]
 	path = pack/bundle/start/ruby-minitest
 	url = https://github.com/sunaku/vim-ruby-minitest.git
-[submodule "bundle/vim-colors-solarized"]
-	path = pack/bundle/start/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/vim-terraform"]
-	path = pack/bundle/start/vim-terraform
-	url = https://github.com/hashivim/vim-terraform.git

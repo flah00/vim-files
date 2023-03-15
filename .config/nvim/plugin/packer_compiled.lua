@@ -74,14 +74,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["ag.vim"] = {
-    commands = { "Ag" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/opt/ag.vim",
-    url = "https://github.com/rking/ag.vim"
-  },
   ["auto-pairs"] = {
     loaded = true,
     path = "/home/flah00/.local/share/nvim/site/pack/packer/start/auto-pairs",
@@ -96,11 +88,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/flah00/.local/share/nvim/site/pack/packer/start/ctrlp.vim",
     url = "https://github.com/kien/ctrlp.vim"
-  },
-  neomake = {
-    loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/neomake",
-    url = "https://github.com/neomake/neomake"
   },
   nerdcommenter = {
     loaded = true,
@@ -130,6 +117,11 @@ _G.packer_plugins = {
     path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-colors-solarized",
     url = "https://github.com/altercation/vim-colors-solarized"
   },
+  ["vim-dispatch"] = {
+    loaded = true,
+    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-dispatch",
+    url = "https://github.com/tpope/vim-dispatch"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-fugitive",
@@ -139,6 +131,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-go",
     url = "https://github.com/fatih/vim-go"
+  },
+  ["vim-grepper"] = {
+    loaded = true,
+    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-grepper",
+    url = "https://github.com/mhinz/vim-grepper"
   },
   ["vim-ruby-minitest"] = {
     loaded = true,
@@ -154,6 +151,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-terraform",
     url = "https://github.com/hashivim/vim-terraform"
+  },
+  ["vim-test"] = {
+    loaded = true,
+    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-test",
+    url = "https://github.com/vim-test/vim-test"
+  },
+  ["vim-tmux"] = {
+    loaded = true,
+    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-tmux",
+    url = "https://github.com/tmux-plugins/vim-tmux"
   }
 }
 
@@ -161,6 +168,13 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'Bedit', function(cmdargs)
+          require('packer.load')({'vim-bundler'}, { cmd = 'Bedit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Bedit ', 'cmdline')
+      end})
 pcall(vim.api.nvim_create_user_command, 'Bsplit', function(cmdargs)
           require('packer.load')({'vim-bundler'}, { cmd = 'Bsplit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -189,13 +203,6 @@ pcall(vim.api.nvim_create_user_command, 'Bpedit', function(cmdargs)
           require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('Bpedit ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'Ag', function(cmdargs)
-          require('packer.load')({'ag.vim'}, { cmd = 'Ag', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'ag.vim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Ag ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'Bundle', function(cmdargs)
           require('packer.load')({'vim-bundler'}, { cmd = 'Bundle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -209,13 +216,6 @@ pcall(vim.api.nvim_create_user_command, 'Bopen', function(cmdargs)
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('Bopen ', 'cmdline')
-      end})
-pcall(vim.api.nvim_create_user_command, 'Bedit', function(cmdargs)
-          require('packer.load')({'vim-bundler'}, { cmd = 'Bedit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Bedit ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
 
