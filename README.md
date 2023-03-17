@@ -2,10 +2,9 @@
 * nvm install --lts=fermium
 * nvm use lts/fermium
 * gem install solargraph
-* git clone https://github.com/juliosueiras/terraform-lsp
-    * GO111MODULE=on go mod download
-    * make
-    * make copy DST=$GOPATH/bin
+* Install terraform
+    * https://www.hashicorp.com/official-packaging-guide
+		* apt-get install terraform terraform-ls
 * :PackSync
 * :GoInstallBinaries
 * :CocInstall coc-json coc-go coc-solargraph
@@ -14,11 +13,12 @@
 {
   "npm.binPath": "~/.nvm/versions/node/v14.21.3/bin/yarn",
   "languageserver": {
-    "go": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod"],
-      "trace.server": "verbose",
-      "filetypes": ["go"]
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform","tf"],
+      "initializationOptions": {},
+      "settings": {}
     }
   }
 }
