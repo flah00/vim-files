@@ -74,6 +74,15 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ale = {
+    commands = { "ALEEnable" },
+    config = { "vim.cmd[[ALEEnable]]" },
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/flah00/.local/share/nvim/site/pack/packer/opt/ale",
+    url = "https://github.com/w0rp/ale"
+  },
   ["auto-pairs"] = {
     loaded = true,
     path = "/home/flah00/.local/share/nvim/site/pack/packer/start/auto-pairs",
@@ -84,10 +93,10 @@ _G.packer_plugins = {
     path = "/home/flah00/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
-  ["ctrlp.vim"] = {
+  fzf = {
     loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/ctrlp.vim",
-    url = "https://github.com/kien/ctrlp.vim"
+    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/fzf",
+    url = "https://github.com/junegunn/fzf"
   },
   nerdcommenter = {
     loaded = true,
@@ -128,8 +137,10 @@ _G.packer_plugins = {
     url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-go"] = {
-    loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-go",
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/flah00/.local/share/nvim/site/pack/packer/opt/vim-go",
     url = "https://github.com/fatih/vim-go"
   },
   ["vim-grepper"] = {
@@ -138,8 +149,10 @@ _G.packer_plugins = {
     url = "https://github.com/mhinz/vim-grepper"
   },
   ["vim-ruby-minitest"] = {
-    loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-ruby-minitest",
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/flah00/.local/share/nvim/site/pack/packer/opt/vim-ruby-minitest",
     url = "https://github.com/sunaku/vim-ruby-minitest"
   },
   ["vim-surround"] = {
@@ -148,8 +161,10 @@ _G.packer_plugins = {
     url = "https://github.com/tpope/vim-surround"
   },
   ["vim-terraform"] = {
-    loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-terraform",
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/flah00/.local/share/nvim/site/pack/packer/opt/vim-terraform",
     url = "https://github.com/hashivim/vim-terraform"
   },
   ["vim-test"] = {
@@ -158,8 +173,10 @@ _G.packer_plugins = {
     url = "https://github.com/vim-test/vim-test"
   },
   ["vim-tmux"] = {
-    loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-tmux",
+    loaded = false,
+    needs_bufread = true,
+    only_cond = false,
+    path = "/home/flah00/.local/share/nvim/site/pack/packer/opt/vim-tmux",
     url = "https://github.com/tmux-plugins/vim-tmux"
   }
 }
@@ -168,6 +185,41 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'Btabedit', function(cmdargs)
+          require('packer.load')({'vim-bundler'}, { cmd = 'Btabedit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Btabedit ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'Bpedit', function(cmdargs)
+          require('packer.load')({'vim-bundler'}, { cmd = 'Bpedit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Bpedit ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'ALEEnable', function(cmdargs)
+          require('packer.load')({'ale'}, { cmd = 'ALEEnable', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'ale'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('ALEEnable ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'Bundle', function(cmdargs)
+          require('packer.load')({'vim-bundler'}, { cmd = 'Bundle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Bundle ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'Bopen', function(cmdargs)
+          require('packer.load')({'vim-bundler'}, { cmd = 'Bopen', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Bopen ', 'cmdline')
+      end})
 pcall(vim.api.nvim_create_user_command, 'Bedit', function(cmdargs)
           require('packer.load')({'vim-bundler'}, { cmd = 'Bedit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -189,36 +241,46 @@ pcall(vim.api.nvim_create_user_command, 'Bvsplit', function(cmdargs)
           require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('Bvsplit ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'Btabedit', function(cmdargs)
-          require('packer.load')({'vim-bundler'}, { cmd = 'Btabedit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Btabedit ', 'cmdline')
-      end})
-pcall(vim.api.nvim_create_user_command, 'Bpedit', function(cmdargs)
-          require('packer.load')({'vim-bundler'}, { cmd = 'Bpedit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Bpedit ', 'cmdline')
-      end})
-pcall(vim.api.nvim_create_user_command, 'Bundle', function(cmdargs)
-          require('packer.load')({'vim-bundler'}, { cmd = 'Bundle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Bundle ', 'cmdline')
-      end})
-pcall(vim.api.nvim_create_user_command, 'Bopen', function(cmdargs)
-          require('packer.load')({'vim-bundler'}, { cmd = 'Bopen', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Bopen ', 'cmdline')
-      end})
 time([[Defining lazy-load commands]], false)
 
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType terraform ++once lua require("packer.load")({'ale', 'vim-terraform'}, { ft = "terraform" }, _G.packer_plugins)]]
+vim.cmd [[au FileType hcl ++once lua require("packer.load")({'ale', 'vim-terraform'}, { ft = "hcl" }, _G.packer_plugins)]]
+vim.cmd [[au FileType toml ++once lua require("packer.load")({'ale'}, { ft = "toml" }, _G.packer_plugins)]]
+vim.cmd [[au FileType tmux ++once lua require("packer.load")({'vim-tmux'}, { ft = "tmux" }, _G.packer_plugins)]]
+vim.cmd [[au FileType erb ++once lua require("packer.load")({'ale'}, { ft = "erb" }, _G.packer_plugins)]]
+vim.cmd [[au FileType dockerfile ++once lua require("packer.load")({'ale'}, { ft = "dockerfile" }, _G.packer_plugins)]]
+vim.cmd [[au FileType json ++once lua require("packer.load")({'ale'}, { ft = "json" }, _G.packer_plugins)]]
+vim.cmd [[au FileType vim ++once lua require("packer.load")({'ale'}, { ft = "vim" }, _G.packer_plugins)]]
+vim.cmd [[au FileType yaml ++once lua require("packer.load")({'ale'}, { ft = "yaml" }, _G.packer_plugins)]]
+vim.cmd [[au FileType sh ++once lua require("packer.load")({'ale'}, { ft = "sh" }, _G.packer_plugins)]]
+vim.cmd [[au FileType bash ++once lua require("packer.load")({'ale'}, { ft = "bash" }, _G.packer_plugins)]]
+vim.cmd [[au FileType html ++once lua require("packer.load")({'ale'}, { ft = "html" }, _G.packer_plugins)]]
+vim.cmd [[au FileType css ++once lua require("packer.load")({'ale'}, { ft = "css" }, _G.packer_plugins)]]
+vim.cmd [[au FileType javascript ++once lua require("packer.load")({'ale'}, { ft = "javascript" }, _G.packer_plugins)]]
+vim.cmd [[au FileType go ++once lua require("packer.load")({'ale', 'vim-go'}, { ft = "go" }, _G.packer_plugins)]]
+vim.cmd [[au FileType ruby ++once lua require("packer.load")({'ale', 'vim-ruby-minitest'}, { ft = "ruby" }, _G.packer_plugins)]]
+vim.cmd [[au FileType python ++once lua require("packer.load")({'ale'}, { ft = "python" }, _G.packer_plugins)]]
+vim.cmd [[au FileType systemd ++once lua require("packer.load")({'ale'}, { ft = "systemd" }, _G.packer_plugins)]]
+vim.cmd [[au FileType rego ++once lua require("packer.load")({'ale'}, { ft = "rego" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'ale'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType lua ++once lua require("packer.load")({'ale'}, { ft = "lua" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
+vim.cmd("augroup END")
+vim.cmd [[augroup filetypedetect]]
+time([[Sourcing ftdetect script at: /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-tmux/ftdetect/tmux.vim]], true)
+vim.cmd [[source /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-tmux/ftdetect/tmux.vim]]
+time([[Sourcing ftdetect script at: /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-tmux/ftdetect/tmux.vim]], false)
+time([[Sourcing ftdetect script at: /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], true)
+vim.cmd [[source /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]]
+time([[Sourcing ftdetect script at: /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], false)
+time([[Sourcing ftdetect script at: /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-terraform/ftdetect/hcl.vim]], true)
+vim.cmd [[source /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-terraform/ftdetect/hcl.vim]]
+time([[Sourcing ftdetect script at: /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-terraform/ftdetect/hcl.vim]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

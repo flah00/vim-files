@@ -14,21 +14,37 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
-	use 'jiangmiao/auto-pairs'
-	use 'tpope/vim-surround'
-	use {'tpope/vim-fugitive'}
-	use {'tpope/vim-bundler', opt = true, cmd = {'Bundle', 'Bopen', 'Bedit', 'Bsplit', 'Bvsplit', 'Btabedit', 'Bpedit'}}
+	use 'altercation/vim-colors-solarized'
+	use 'junegunn/fzf'
+	use 'vim-test/vim-test'
+	-- use 'neomake/neomake'
+	use 'mhinz/vim-grepper'
 	use 'scrooloose/nerdtree'
 	use 'scrooloose/nerdcommenter'
-	use {'rking/ag.vim', opt = true, cmd = {'Ag'}}
-	use 'kien/ctrlp.vim'
-	use 'neomake/neomake'
-	use {'neoclide/coc.nvim', branch = 'release'}
-	use 'fatih/vim-go'
-	use 'sunaku/vim-ruby-minitest'
-	use 'altercation/vim-colors-solarized'
-	use 'hashivim/vim-terraform'
-	use 'tmux-plugins/vim-tmux'
+	use 'jiangmiao/auto-pairs'
+	use 'tpope/vim-dispatch'
+	use 'tpope/vim-surround'
+	use { 'tpope/vim-fugitive' }
+	use { 'tpope/vim-bundler', opt = true, cmd = {'Bundle', 'Bopen', 'Bedit', 'Bsplit', 'Bvsplit', 'Btabedit', 'Bpedit'} }
+	use {
+		'w0rp/ale',
+    ft = {
+      'sh', 'bash',
+      'html', 'css', 'javascript', 'markdown', 
+      'vim', 'lua', 'toml', 
+      'ruby', 'erb',
+      'python', 'go',
+      'dockerfile', 'terraform', 'hcl', 'rego',
+      'systemd', 'json', 'yaml'
+    },
+		cmd = 'ALEEnable',
+		config = 'vim.cmd[[ALEEnable]]'
+	}
+	use { 'neoclide/coc.nvim', branch = 'release' }
+	use { 'fatih/vim-go', opt = true, ft = 'go' }
+	use { 'sunaku/vim-ruby-minitest', opt = true, ft = 'ruby' }
+	use { 'hashivim/vim-terraform', opt = true, ft = {'terraform', 'hcl'} }
+	use { 'tmux-plugins/vim-tmux', opt = true, ft = 'tmux' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
