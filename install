@@ -1,6 +1,6 @@
 #!/bin/bash
-find * \( -name .git\* -o -name vim.rb \) -prune -o -print| cpio -pdm ~/.vim
-cp .vimrc ~
+#find * \( -name .git\* -o -name vim.rb -o README.md \) -prune -o -print| cpio -pdm ~/.vim
+cp -r .vimrc .config .SpaceVim.d ~
 cp -i .Xdefaults .Xresources ~
 set -x
 if `type brew &>/dev/null`; then

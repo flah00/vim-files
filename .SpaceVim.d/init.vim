@@ -2,12 +2,18 @@
 "set wrap
 "set guifont=JetBrainsMonoForPowerline-Regular:h20
 set clipboard=unnamedplus
+" gutter is transparent
+highlight clear SignColumn
+au FileType help nnoremap <buffer> <cr> <c-]>|   " Enter selects subject
+au FileType help nnoremap <buffer> <bs> <c-T>|   " Backspace to go back
 nmap <leader>y "+y
 " ############## Default Setting End   ########################
 
 
 " ############## SpaceVim Setting Start ########################
 " basic defualt SpaceVim settings
+let g:spacevim_disabled_plugins = ['neopairs.vim', 'vim-matchup']
+
 let g:spacevim_colorscheme  = 'NeoSolarized'
 let g:spacevim_colorscheme_bg = 'light'
 let g:spacevim_guifont = "SourceCodePro Nerd Font Mono:h11"
@@ -16,21 +22,19 @@ let g:spacevim_default_indent = 2
 "let g:spacevim_error_symbol = '✗'
 "let g:spacevim_warning_symbol =  '!'
 "let g:spacevim_info_symbol =  'i'
+"let g:spacevim_statusline_separator = 'arrow'
+"let g:spacevim_enable_statusline_mode = 1
 "let g:spacevim_buffer_index_type = 4
 "let g:spacevim_windows_index_type = 1
-"let g:spacevim_lint_on_the_fly = 0
 "let g:spacevim_relativenumber = 1
+let g:spacevim_lint_on_the_fly = 1
 let g:spacevim_filetree_direction = 'left'
 let g:spacevim_lint_on_save = 1
 let g:spacevim_lint_engine = 'ale'
-"let g:spacevim_enable_statusline_mode = 1
-"let g:spacevim_windows_index_type = 3
-"let g:spacevim_buffer_index_type = 4
-"let g:spacevim_statusline_separator = 'arrow'
 let g:spacevim_autocomplete_method = 'coc'
 
 " layers settings
-call SpaceVim#layers#load('checkers')
+"call SpaceVim#layers#load('checkers')
 call SpaceVim#layers#load('colorscheme')
 call SpaceVim#layers#load('fzf')
 call SpaceVim#layers#load('lsp')
@@ -38,11 +42,12 @@ call SpaceVim#layers#load('shell')
 "call SpaceVim#layers#load('git')
 call SpaceVim#layers#load('VersionControl')
 "call SpaceVim#layers#load('lang#c')
-"call SpaceVim#layers#load('lang#javascript')
+call SpaceVim#layers#load('lang#javascript')
 "call SpaceVim#layers#load('lang#latex')
 call SpaceVim#layers#load('lang#lua')
 call SpaceVim#layers#load('lang#markdown')
 call SpaceVim#layers#load('lang#ruby')
+call SpaceVim#layers#load('lang#rego')
 call SpaceVim#layers#load('lang#terraform')
 "call SpaceVim#layers#load('lang#python')
 "call SpaceVim#layers#load('lang#rust')
@@ -73,9 +78,21 @@ call SpaceVim#layers#load('ui',
     \ }
     \ )
 
+" call SpaceVim#layers#load('checkers',
+    " \ {
+    " \  'lint_engine' : 'ale',
+    " \ }
+    " \ )
+"
 call SpaceVim#layers#load('git',
     \ {
     \  'git_plugin' : 'fugitive'
+    \ }
+    \ )
+
+call SpaceVim#layers#load('lang#terraform',
+    \ {
+    \  'format_on_save' : v:true,
     \ }
     \ )
 
@@ -112,6 +129,7 @@ let vim_markdown_preview_use_xdg_open=1
 " ############## Custom Plugins in SpaceVim Start ########################
 "    \ ['ThePrimeagen/vim-be-good'], 
 let g:spacevim_custom_plugins = [
+    \ ['dense-analysis/ale'], 
     \ ]
 " ############## Custom Plugins in SpaceVim End   ########################
 

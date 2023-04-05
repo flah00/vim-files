@@ -1,4 +1,5 @@
 set  nocompatible               " use vim defaults
+
 "set novisualbell               " turn off visual bell
 "set nowrap
 "set viminfo='20,<50,s10,h
@@ -83,30 +84,35 @@ colorscheme solarized
 
 "nnoremap <Leader>bg call togglebg#map("<F5>")<CR>
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-noremap <Leader>a :Ag --ignore log --ignore tmp 
-noremap <Leader>b :!ctags -R --languages=ruby --exclude=.git --exclude=log .<CR>
+noremap <Leader>A :GrepperGit 
+"noremap <Leader>b :!ctags -R --languages=ruby --exclude=.git --exclude=log .<CR>
 noremap <Leader>c :!xsel -i < %<CR><CR>
 noremap <Leader>p :r!xsel -o<CR>:1<CR>dd<CR>
-noremap <Leader>g :!align.pl -ss<CR>dd
-noremap <Leader>G :s/ *$//<CR>
-noremap <Leader>l :TlistToggle<CR>
+"noremap <Leader>g :!align.pl -ss<CR>dd
+"noremap <Leader>G :s/ *$//<CR>
+"noremap <Leader>l :TlistToggle<CR>
 noremap <Leader>s :!sort<CR>
 "noremap <Leader>t :!ruby -rjson -e 'puts JSON.parse(File.read(ARGV[0])).to_json' % >/tmp/json.out && aws --profile prod-east cloudformation validate-template --template-body "$(cat /tmp/json.out)"<CR>
 noremap <Leader>; :NERDTreeToggle<CR>
 "noremap <Leader>= :%s/:\([^[:space:]=]\+\)\s*=>\s*/\1: /g<CR>
 inoremap <C-m> <C-x><C-o>
-noremap <C-p> :tabnext<cr>
-noremap <C-o> :tabprev<cr>
-noremap <C-n> :tabnew<cr>
-noremap <C-q> :tabclose<cr>
+"noremap <C-p> :tabnext<cr>
+"noremap <C-o> :tabprev<cr>
+"noremap <C-n> :tabnew<cr>
+"noremap <C-q> :tabclose<cr>
 
+"let g:solarized_termcolors=256
+"let psc_style='defdark'
+"colorscheme ps_color
+"hi Comment ctermfg=240
+"colorscheme jellybeans
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y\ 
 set statusline+=%{FugitiveStatusline()}\ 
 set statusline+=%{synIDattr(synID(line('.'),col('.'),1),'name')}  " highlight
 set statusline+=%b,0x%-8B                   " current char
 set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
 
-let g:ctrlp_map = '<c-i>'
+"let g:ctrlp_map = '<c-i>'
 
 " go
 let g:go_fmt_command = "goimports"

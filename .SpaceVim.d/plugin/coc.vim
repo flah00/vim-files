@@ -2,12 +2,10 @@
 inoremap <silent><expr> <c-space> coc#refresh()
 let g:coc_config_home = '~/.SpaceVim.d/'
 let g:coc_global_extensions = [
-      \ 'coc-dictionary',
       \ 'coc-markdownlint',
       \ 'coc-go', 
       \ 'coc-solargraph',
       \ 'coc-sh', 
-      \ 'coc-word',
       \ ]
 function! CheckBackspace() abort
   let col = col('.') - 1
