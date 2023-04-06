@@ -1,8 +1,11 @@
 -- https://neovim.io/doc/user/lua-guide.html
-require("plugins")
+require('plugins')
 
 vim.cmd([[
   let g:coc_node_path = '/home/flah00/.nvm/versions/node/v14.21.3/bin/node'
+  set signcolumn=yes
+  " gutter is transparent
+  highlight clear SignColumn
   noremap <TAB> :FZF<CR>
 
   nnoremap <m-h> <c-w>h

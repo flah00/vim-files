@@ -1,3 +1,0 @@
-[submodule "bundle/ruby-minitest"]
-	path = pack/bundle/start/ruby-minitest
-	url = https://github.com/sunaku/vim-ruby-minitest.git

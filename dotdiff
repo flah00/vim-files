@@ -2,19 +2,30 @@
 # vim:ft=sh:
 skip="-name \*.sw[opn] -o -name .gitmodules -o -name .git -o -name README.md -o -name dotdiff -o -name install"
 
+function finder() {
+  find . \( $skip $@ \) -prune -o -type f -print
+}
+
 if [[ $1 = "cp" ]]; then
-  for file in `find . \( $skip \) -prune -o -type f -print`; do
+  for file in $(finder); do
     orig=~/${file#*/}
-    echo "diff -q $orig $file &>/dev/null || cp $orig $file"
+    if [[ -e $orig ]] && ! diff -q $orig $file &>/dev/null; then
+      clear
+      diff -ub $file $orig | less -E -X
+      cp -i $orig $file
+    fi
   done
 
 elif [[ $1 = "find" ]]; then
-  find . \( $skip \) -prune -o -type f -print
+  finder
 
 else
-  (for file in `find . \( $skip \) -prune -o -type f -print`
-  do
-    diff -ub $file ~/.vim/${file} 2>/dev/null
-  done) | less -E -X
+  (
+  for file in $(finder -o -name .SpaceVim.d -o -name .config); do
+    diff -ub ~/.vim/${file} $file 2>/dev/null
+  done;
+  diff -rub ~/.config/nvim .config/nvim ;
+  diff -rub ~/.SpaceVim.d .SpaceVim.d 
+  ) | less -E -X
 fi
 

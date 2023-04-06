@@ -1,11 +1,15 @@
-* curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-* nvm install --lts=fermium
-* nvm use lts/fermium
-* npm install -g yarn
-* gem install solargraph
+# Install
+
+* `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash`
+* `nvm install --lts=fermium`
+* `nvm use lts/fermium`
+* `npm install -g yarn`
+* `yarn add global neovim`
+* `gem install solargraph neovim`
+* `pip3 neovim neovim-remote`
 * Install terraform
-    * https://www.hashicorp.com/official-packaging-guide
-		* apt-get install terraform terraform-ls
+  * https://www.hashicorp.com/official-packaging-guide
+  * `apt-get install terraform terraform-ls`
 * :PackSync
 * :GoInstallBinaries
 * :CocInstall coc-json coc-yaml coc-go coc-solargraph
