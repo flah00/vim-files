@@ -11,10 +11,12 @@ nmap <leader>y "+y
 
 
 " ############## SpaceVim Setting Start ########################
+let g:NERDTreeChDirMode = 0
 " basic defualt SpaceVim settings
 let g:spacevim_disabled_plugins = ['neopairs.vim', 'vim-matchup']
 
 let g:spacevim_colorscheme  = 'NeoSolarized'
+let g:spacevim_project_non_root = 'current'
 let g:spacevim_colorscheme_bg = 'light'
 let g:spacevim_guifont = "SourceCodePro Nerd Font Mono:h11"
 let g:spacevim_max_column   = 80
@@ -35,7 +37,7 @@ let g:spacevim_autocomplete_method = 'coc'
 
 " layers settings
 "call SpaceVim#layers#load('checkers')
-call SpaceVim#layers#load('colorscheme')
+"call SpaceVim#layers#load('colorscheme')
 call SpaceVim#layers#load('fzf')
 call SpaceVim#layers#load('lsp')
 call SpaceVim#layers#load('shell')
@@ -51,7 +53,6 @@ call SpaceVim#layers#load('lang#rego')
 call SpaceVim#layers#load('lang#terraform')
 "call SpaceVim#layers#load('lang#python')
 "call SpaceVim#layers#load('lang#rust')
-"call SpaceVim#layers#load('lang#swig')
 "call SpaceVim#layers#load('lang#xml')
 " ############## SpaceVim Setting End  ########################
 
@@ -127,9 +128,9 @@ let vim_markdown_preview_use_xdg_open=1
 
 
 " ############## Custom Plugins in SpaceVim Start ########################
-"    \ ['ThePrimeagen/vim-be-good'], 
 let g:spacevim_custom_plugins = [
     \ ['dense-analysis/ale'], 
+    \ ['PascalZh/NeoSolarized'],
     \ ]
 " ############## Custom Plugins in SpaceVim End   ########################
 

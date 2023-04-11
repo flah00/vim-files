@@ -9,6 +9,7 @@ let g:coc_global_extensions = [
       \ 'coc-html', 
       \ 'coc-json', 
       \ 'coc-yaml', 
+      \ 'coc-vimlsp', 
       \ ]
 function! CheckBackspace() abort
   let col = col('.') - 1
