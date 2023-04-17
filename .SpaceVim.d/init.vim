@@ -3,6 +3,7 @@
 "set guifont=JetBrainsMonoForPowerline-Regular:h20
 set clipboard=unnamedplus
 " gutter is transparent
+set signcolumn=yes
 highlight clear SignColumn
 au FileType help nnoremap <buffer> <cr> <c-]>|   " Enter selects subject
 au FileType help nnoremap <buffer> <bs> <c-T>|   " Backspace to go back
@@ -17,6 +18,7 @@ let g:spacevim_disabled_plugins = ['neopairs.vim', 'vim-matchup']
 
 let g:spacevim_colorscheme  = 'NeoSolarized'
 let g:spacevim_project_non_root = 'current'
+let g:spacevim_project_auto_root = 1
 let g:spacevim_colorscheme_bg = 'light'
 let g:spacevim_guifont = "SourceCodePro Nerd Font Mono:h11"
 let g:spacevim_max_column   = 80
@@ -84,7 +86,13 @@ call SpaceVim#layers#load('ui',
     " \  'lint_engine' : 'ale',
     " \ }
     " \ )
-"
+
+call SpaceVim#layers#load('lsp',
+    \ {
+    \  'filetypes' : ['go', 'ruby', 'terraform']
+    \ }
+    \ )
+
 call SpaceVim#layers#load('git',
     \ {
     \  'git_plugin' : 'fugitive'

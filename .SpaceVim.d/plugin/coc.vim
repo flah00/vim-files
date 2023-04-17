@@ -128,22 +128,15 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " Mappings for CoCList
 " Show all diagnostics
 let g:_spacevim_mappings_space.o = {'name' : '+Coc'}
-call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'd'],
-    \ ':CocList diagnostics', 'diagnostics', 1)
-call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'e'],
-    \ ':CocList extensions', 'extensions', 1)
-call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'c'],
-    \ ':CocList commands', 'commands', 1)
-call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'o'],
-    \ ':CocList outline', 'outline', 1)
-call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 's'],
-    \ ':CocList -I symbols', 'symbols', 1)
-call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'p'],
-    \ ':CocPrev', 'previous', 1)
-call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'n'],
-    \ ':CocNext', 'next', 1)
-call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'r'],
-    \ ':CocListResume', 'next', 1)
+call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'C'], ':CocConfig', 'config', 1)
+call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'd'], ':CocList diagnostics', 'diagnostics', 1)
+call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'e'], ':CocList extensions', 'extensions', 1)
+call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'c'], ':CocList commands', 'commands', 1)
+call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'o'], ':CocList outline', 'outline', 1)
+call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 's'], ':CocList -I symbols', 'symbols', 1)
+call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'p'], ':CocPrev', 'previous', 1)
+call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'n'], ':CocNext', 'next', 1)
+call SpaceVim#mapping#space#langSPC('nnoremap', ['o', 'r'], ':CocListResume', 'next', 1)
 
 call coc#config('coc.preferences', {
 			\ "autoTrigger": "always",
