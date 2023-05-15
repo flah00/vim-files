@@ -2,6 +2,7 @@
 inoremap <silent><expr> <c-space> coc#refresh()
 let g:coc_config_home = '~/.SpaceVim.d/'
 let g:coc_global_extensions = [
+      \ 'coc-pyright',
       \ 'coc-markdownlint',
       \ 'coc-go', 
       \ 'coc-solargraph',

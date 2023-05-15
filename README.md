@@ -12,12 +12,12 @@
   * `apt-get install terraform terraform-ls`
 * :PackSync
 * :GoInstallBinaries
-* :CocInstall coc-json coc-yaml coc-go coc-solargraph
+* :CocInstall coc-go coc-html coc-json coc-markdownlint coc-pyright coc-sh coc-solargraph coc-vimlsp coc-yaml
 * ~/.config/nvim/coc-settings.json
 
 ```json
 {
-  "npm.binPath": "~/.nvm/versions/node/v14.21.3/bin/yarn",
+  "npm.binPath": "~/.nvm/versions/node/v18.16.0/bin/yarn",
   "languageserver": {
     "terraform": {
       "command": "terraform-ls",

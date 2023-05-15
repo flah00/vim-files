@@ -1,5 +1,5 @@
 {
-  "npm.binPath": "~/.nvm/versions/node/v14.21.3/bin/yarn",
+  "npm.binPath": "~/.nvm/versions/node/v18.16.0/bin/yarn",
   "languageserver": {
     "terraform": {
       "command": "terraform-ls",
