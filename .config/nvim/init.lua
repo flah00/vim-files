@@ -2,7 +2,7 @@
 require('plugins')
 
 vim.cmd([[
-  let g:coc_node_path = '/home/flah00/.nvm/versions/node/v18.16.0/bin/node'
+  let g:coc_node_path = '/home/philipchampon/.nvm/versions/node/v18.16.0/bin/node'
   set signcolumn=yes
   " gutter is transparent
   highlight clear SignColumn

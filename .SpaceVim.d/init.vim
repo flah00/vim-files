@@ -46,6 +46,7 @@ call SpaceVim#layers#load('shell')
 "call SpaceVim#layers#load('git')
 call SpaceVim#layers#load('VersionControl')
 "call SpaceVim#layers#load('lang#c')
+call SpaceVim#layers#load('lang#go')
 call SpaceVim#layers#load('lang#javascript')
 "call SpaceVim#layers#load('lang#latex')
 call SpaceVim#layers#load('lang#lua')
@@ -53,7 +54,7 @@ call SpaceVim#layers#load('lang#markdown')
 call SpaceVim#layers#load('lang#ruby')
 call SpaceVim#layers#load('lang#rego')
 call SpaceVim#layers#load('lang#terraform')
-"call SpaceVim#layers#load('lang#python')
+call SpaceVim#layers#load('lang#python')
 "call SpaceVim#layers#load('lang#rust')
 "call SpaceVim#layers#load('lang#xml')
 " ############## SpaceVim Setting End  ########################
@@ -139,6 +140,8 @@ let vim_markdown_preview_use_xdg_open=1
 let g:spacevim_custom_plugins = [
     \ ['dense-analysis/ale'], 
     \ ['PascalZh/NeoSolarized'],
+    \ ['towolf/vim-helm'],
+    \ ['Einenlum/yaml-revealer'],
     \ ]
 " ############## Custom Plugins in SpaceVim End   ########################
 

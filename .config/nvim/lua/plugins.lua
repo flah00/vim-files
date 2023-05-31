@@ -14,6 +14,7 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
+	use 'Einenlum/yaml-revealer'
   use 'neovim/nvim-lspconfig'
   use 'altercation/vim-colors-solarized'
   use 'junegunn/fzf'
@@ -23,6 +24,7 @@ return require('packer').startup(function(use)
   use 'scrooloose/nerdtree'
   use 'scrooloose/nerdcommenter'
   use 'jiangmiao/auto-pairs'
+  use 'tpope/vim-unimpaired'
   use 'tpope/vim-dispatch'
   use 'tpope/vim-surround'
   use { 'tpope/vim-fugitive' }

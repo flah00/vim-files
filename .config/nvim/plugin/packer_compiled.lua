@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/flah00/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/flah00/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/flah00/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/flah00/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/flah00/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/philipchampon/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/philipchampon/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/philipchampon/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/philipchampon/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/philipchampon/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -80,42 +80,42 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = true,
     only_cond = false,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/opt/ale",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/opt/ale",
     url = "https://github.com/w0rp/ale"
   },
   ["auto-pairs"] = {
     loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/auto-pairs",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
   },
   ["coc.nvim"] = {
     loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/coc.nvim",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
   fzf = {
     loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/fzf",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/fzf",
     url = "https://github.com/junegunn/fzf"
   },
   nerdcommenter = {
     loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/nerdcommenter",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "https://github.com/scrooloose/nerdcommenter"
   },
   nerdtree = {
     loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/nerdtree",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/nerdtree",
     url = "https://github.com/scrooloose/nerdtree"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
   ["vim-bundler"] = {
@@ -123,66 +123,76 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/opt/vim-bundler",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/opt/vim-bundler",
     url = "https://github.com/tpope/vim-bundler"
   },
   ["vim-colors-solarized"] = {
     loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-colors-solarized",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/vim-colors-solarized",
     url = "https://github.com/altercation/vim-colors-solarized"
   },
   ["vim-dispatch"] = {
     loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-dispatch",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/vim-dispatch",
     url = "https://github.com/tpope/vim-dispatch"
   },
   ["vim-fugitive"] = {
     loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-go"] = {
     loaded = false,
     needs_bufread = true,
     only_cond = false,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/opt/vim-go",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/opt/vim-go",
     url = "https://github.com/fatih/vim-go"
   },
   ["vim-grepper"] = {
     loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-grepper",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/vim-grepper",
     url = "https://github.com/mhinz/vim-grepper"
   },
   ["vim-ruby-minitest"] = {
     loaded = false,
     needs_bufread = false,
     only_cond = false,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/opt/vim-ruby-minitest",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/opt/vim-ruby-minitest",
     url = "https://github.com/sunaku/vim-ruby-minitest"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-surround",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
   },
   ["vim-terraform"] = {
     loaded = false,
     needs_bufread = true,
     only_cond = false,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/opt/vim-terraform",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/opt/vim-terraform",
     url = "https://github.com/hashivim/vim-terraform"
   },
   ["vim-test"] = {
     loaded = true,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/start/vim-test",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/vim-test",
     url = "https://github.com/vim-test/vim-test"
   },
   ["vim-tmux"] = {
     loaded = false,
     needs_bufread = true,
     only_cond = false,
-    path = "/home/flah00/.local/share/nvim/site/pack/packer/opt/vim-tmux",
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/opt/vim-tmux",
     url = "https://github.com/tmux-plugins/vim-tmux"
+  },
+  ["vim-unimpaired"] = {
+    loaded = true,
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/vim-unimpaired",
+    url = "https://github.com/tpope/vim-unimpaired"
+  },
+  ["yaml-revealer"] = {
+    loaded = true,
+    path = "/home/philipchampon/.local/share/nvim/site/pack/packer/start/yaml-revealer",
+    url = "https://github.com/Einenlum/yaml-revealer"
   }
 }
 
@@ -190,6 +200,20 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'Bedit', function(cmdargs)
+          require('packer.load')({'vim-bundler'}, { cmd = 'Bedit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Bedit ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'Bsplit', function(cmdargs)
+          require('packer.load')({'vim-bundler'}, { cmd = 'Bsplit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Bsplit ', 'cmdline')
+      end})
 pcall(vim.api.nvim_create_user_command, 'Bvsplit', function(cmdargs)
           require('packer.load')({'vim-bundler'}, { cmd = 'Bvsplit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -232,59 +256,45 @@ pcall(vim.api.nvim_create_user_command, 'Bopen', function(cmdargs)
           require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('Bopen ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'Bedit', function(cmdargs)
-          require('packer.load')({'vim-bundler'}, { cmd = 'Bedit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Bedit ', 'cmdline')
-      end})
-pcall(vim.api.nvim_create_user_command, 'Bsplit', function(cmdargs)
-          require('packer.load')({'vim-bundler'}, { cmd = 'Bsplit', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'vim-bundler'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('Bsplit ', 'cmdline')
-      end})
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
 time([[Defining lazy-load filetype autocommands]], true)
-vim.cmd [[au FileType terraform ++once lua require("packer.load")({'vim-terraform', 'ale'}, { ft = "terraform" }, _G.packer_plugins)]]
-vim.cmd [[au FileType hcl ++once lua require("packer.load")({'vim-terraform', 'ale'}, { ft = "hcl" }, _G.packer_plugins)]]
-vim.cmd [[au FileType rego ++once lua require("packer.load")({'ale'}, { ft = "rego" }, _G.packer_plugins)]]
-vim.cmd [[au FileType systemd ++once lua require("packer.load")({'ale'}, { ft = "systemd" }, _G.packer_plugins)]]
-vim.cmd [[au FileType yaml ++once lua require("packer.load")({'ale'}, { ft = "yaml" }, _G.packer_plugins)]]
-vim.cmd [[au FileType json ++once lua require("packer.load")({'ale'}, { ft = "json" }, _G.packer_plugins)]]
-vim.cmd [[au FileType vim ++once lua require("packer.load")({'ale'}, { ft = "vim" }, _G.packer_plugins)]]
 vim.cmd [[au FileType tmux ++once lua require("packer.load")({'vim-tmux'}, { ft = "tmux" }, _G.packer_plugins)]]
-vim.cmd [[au FileType javascript ++once lua require("packer.load")({'ale'}, { ft = "javascript" }, _G.packer_plugins)]]
-vim.cmd [[au FileType lua ++once lua require("packer.load")({'ale'}, { ft = "lua" }, _G.packer_plugins)]]
 vim.cmd [[au FileType sh ++once lua require("packer.load")({'ale'}, { ft = "sh" }, _G.packer_plugins)]]
 vim.cmd [[au FileType bash ++once lua require("packer.load")({'ale'}, { ft = "bash" }, _G.packer_plugins)]]
 vim.cmd [[au FileType html ++once lua require("packer.load")({'ale'}, { ft = "html" }, _G.packer_plugins)]]
 vim.cmd [[au FileType css ++once lua require("packer.load")({'ale'}, { ft = "css" }, _G.packer_plugins)]]
-vim.cmd [[au FileType go ++once lua require("packer.load")({'ale', 'vim-go'}, { ft = "go" }, _G.packer_plugins)]]
-vim.cmd [[au FileType markdown ++once lua require("packer.load")({'ale'}, { ft = "markdown" }, _G.packer_plugins)]]
+vim.cmd [[au FileType javascript ++once lua require("packer.load")({'ale'}, { ft = "javascript" }, _G.packer_plugins)]]
+vim.cmd [[au FileType vim ++once lua require("packer.load")({'ale'}, { ft = "vim" }, _G.packer_plugins)]]
 vim.cmd [[au FileType toml ++once lua require("packer.load")({'ale'}, { ft = "toml" }, _G.packer_plugins)]]
 vim.cmd [[au FileType ruby ++once lua require("packer.load")({'ale', 'vim-ruby-minitest'}, { ft = "ruby" }, _G.packer_plugins)]]
 vim.cmd [[au FileType erb ++once lua require("packer.load")({'ale'}, { ft = "erb" }, _G.packer_plugins)]]
 vim.cmd [[au FileType python ++once lua require("packer.load")({'ale'}, { ft = "python" }, _G.packer_plugins)]]
 vim.cmd [[au FileType dockerfile ++once lua require("packer.load")({'ale'}, { ft = "dockerfile" }, _G.packer_plugins)]]
+vim.cmd [[au FileType terraform ++once lua require("packer.load")({'ale', 'vim-terraform'}, { ft = "terraform" }, _G.packer_plugins)]]
+vim.cmd [[au FileType hcl ++once lua require("packer.load")({'ale', 'vim-terraform'}, { ft = "hcl" }, _G.packer_plugins)]]
+vim.cmd [[au FileType rego ++once lua require("packer.load")({'ale'}, { ft = "rego" }, _G.packer_plugins)]]
+vim.cmd [[au FileType systemd ++once lua require("packer.load")({'ale'}, { ft = "systemd" }, _G.packer_plugins)]]
+vim.cmd [[au FileType yaml ++once lua require("packer.load")({'ale'}, { ft = "yaml" }, _G.packer_plugins)]]
+vim.cmd [[au FileType json ++once lua require("packer.load")({'ale'}, { ft = "json" }, _G.packer_plugins)]]
+vim.cmd [[au FileType lua ++once lua require("packer.load")({'ale'}, { ft = "lua" }, _G.packer_plugins)]]
+vim.cmd [[au FileType go ++once lua require("packer.load")({'ale', 'vim-go'}, { ft = "go" }, _G.packer_plugins)]]
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'ale'}, { ft = "markdown" }, _G.packer_plugins)]]
 time([[Defining lazy-load filetype autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
-time([[Sourcing ftdetect script at: /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-terraform/ftdetect/hcl.vim]], true)
-vim.cmd [[source /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-terraform/ftdetect/hcl.vim]]
-time([[Sourcing ftdetect script at: /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-terraform/ftdetect/hcl.vim]], false)
-time([[Sourcing ftdetect script at: /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-tmux/ftdetect/tmux.vim]], true)
-vim.cmd [[source /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-tmux/ftdetect/tmux.vim]]
-time([[Sourcing ftdetect script at: /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-tmux/ftdetect/tmux.vim]], false)
-time([[Sourcing ftdetect script at: /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], true)
-vim.cmd [[source /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]]
-time([[Sourcing ftdetect script at: /home/flah00/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], false)
+time([[Sourcing ftdetect script at: /home/philipchampon/.local/share/nvim/site/pack/packer/opt/vim-tmux/ftdetect/tmux.vim]], true)
+vim.cmd [[source /home/philipchampon/.local/share/nvim/site/pack/packer/opt/vim-tmux/ftdetect/tmux.vim]]
+time([[Sourcing ftdetect script at: /home/philipchampon/.local/share/nvim/site/pack/packer/opt/vim-tmux/ftdetect/tmux.vim]], false)
+time([[Sourcing ftdetect script at: /home/philipchampon/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], true)
+vim.cmd [[source /home/philipchampon/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]]
+time([[Sourcing ftdetect script at: /home/philipchampon/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], false)
+time([[Sourcing ftdetect script at: /home/philipchampon/.local/share/nvim/site/pack/packer/opt/vim-terraform/ftdetect/hcl.vim]], true)
+vim.cmd [[source /home/philipchampon/.local/share/nvim/site/pack/packer/opt/vim-terraform/ftdetect/hcl.vim]]
+time([[Sourcing ftdetect script at: /home/philipchampon/.local/share/nvim/site/pack/packer/opt/vim-terraform/ftdetect/hcl.vim]], false)
 vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
